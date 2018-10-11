@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBrowser));
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.btnBrowserOk = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelWebBrowserContainer = new System.Windows.Forms.Panel();
             this.btnBrowserCancel = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panelWebBrowserContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +100,12 @@
             this.panel1.Size = new System.Drawing.Size(853, 63);
             this.panel1.TabIndex = 3;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // FrmBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,5 +135,6 @@
         private System.Windows.Forms.Panel panelWebBrowserContainer;
         private MaterialSkin.Controls.MaterialRaisedButton btnBrowserCancel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
