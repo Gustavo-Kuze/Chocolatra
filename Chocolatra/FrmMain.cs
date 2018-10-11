@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chocolatra
@@ -16,11 +18,83 @@ namespace Chocolatra
             InitializeComponent();
             setMaterialThemeColors();
         }
+        
+        private async void btnAddInstalledPackages_Click(object sender, EventArgs e)
+        {
+            QuickLog("Searching for packages, please wait...");
+            Task task = new Task(addInstalledToList);
+            task.Start();
+            await task;
+        }
 
-        #region Events
+        #region More
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            FrmAbout about = new FrmAbout();
+            about.ShowDialog();
+        }
+
+        private async void btnInstallChoco_Click(object sender, EventArgs e)
+        {
+            ToggleEnableButtonsInvoked(false);
+            Task tsk = new Task(() =>
+            {
+                ProcessWindowStyle style = ProcessWindowStyle.Hidden;
+                Invoke(new MethodInvoker(() =>
+                {
+                    panelChocolateyButtons.Enabled = false;
+                    if (chkShowConsole.Checked)
+                    {
+                        style = ProcessWindowStyle.Normal;
+                    }
+                }));
+                Cmd.RunAndWait("@\"%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin\"", true, style);
+            });
+            tsk.Start();
+            await tsk;
+            ToggleEnableButtonsInvoked(true);
+        }
+
+
+        private void btnUninstallChocolatey_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You sure You want to remove Chocolatey from your system? Chocolatra will no longer work until You reinstall Chocolatey!", "Do You really want to Uninstall Chocolatey?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\chocolatey", true);
+                    MessageBox.Show("Chocolatey was removed from this computer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error while trying to remove Chocolatey", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        #endregion
+        
         private void btnOpenSite_Click(object sender, EventArgs e)
         {
-            OpenSite();
+            if (Application.OpenForms["FrmBrowser"] == null)
+            {
+                FrmBrowser browser = new FrmBrowser();
+                browser.Show();
+                browser.FormClosed += (send, ev) =>
+                {
+                    foreach (string package in browser.Chocolatras)
+                    {
+                        PackagesManagement pm = new PackagesManagement();
+                        pm.add(new string[] { package });
+
+                    }
+                    RefreshList();
+                };
+            }
+            else
+            {
+                Application.OpenForms["FrmBrowser"].BringToFront();
+            }
         }
 
 
@@ -52,7 +126,7 @@ namespace Chocolatra
         {
             if (!Utils.Internet.IsActive())
             {
-                lblInternetConn.Visible = true;
+                QuickLog("Attention: This application needs an active internet connection to work");
             }
             RefreshList();
         }
@@ -63,41 +137,49 @@ namespace Chocolatra
             ChangeCheckAll();
         }
 
-        private void btnInstallChoco_Click(object sender, EventArgs e)
-        {
-            ProcessWindowStyle style = ProcessWindowStyle.Hidden;
-            if (chkShowConsole.Checked)
-            {
-                style = ProcessWindowStyle.Normal;
-            }
-            Cmd.RunAndWait("@\"%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin\"", true, style);
-        }
-
+       
 
         private void AutoChocoWithProgress(string command, string logMessage)
         {
+            ToggleEnableButtonsInvoked(false);
             var boxes = GetCheckedBoxesText();
             int currentIndex = 1;
-            prgProgress.Maximum = boxes.Count();
-            prgProgress.Visible = true;
-            lblProgress.Visible = true;
+            Invoke(new MethodInvoker(() =>
+            {
+                prgProgress.Maximum = boxes.Count();
+                prgProgress.Visible = true;
+                lblProgress.Visible = true;
+            }));
+
             boxes.ForEach((box) =>
             {
-                prgProgress.Value = currentIndex;
-                lblProgress.Text = logMessage + " " + box + " - " + (currentIndex) + "/" + boxes.Count();
+                Invoke(new MethodInvoker(() =>
+                {
+                    prgProgress.Value = currentIndex;
+                    lblProgress.Text = logMessage + " " + box + " - " + (currentIndex) + "/" + boxes.Count();
+                }));
+
                 RunChoco(box, command);
                 ++currentIndex;
             });
-            prgProgress.Visible = false;
-            lblProgress.Visible = false;
+            Invoke(new MethodInvoker(() =>
+            {
+                prgProgress.Visible = false;
+                lblProgress.Visible = false;
+            }));
+            ToggleEnableButtonsInvoked(true);
+
         }
 
 
-        private void btnInstallPackages_Click(object sender, EventArgs e)
+        private async void btnInstallPackages_Click(object sender, EventArgs e)
         {
             if (isAnyPackageSelected())
             {
-                AutoChocoWithProgress("install", "Installing package");
+                Task tsk = new Task(() => { AutoChocoWithProgress("install", "Installing package"); });
+                tsk.Start();
+                await tsk;
+
             }
             else
             {
@@ -105,11 +187,13 @@ namespace Chocolatra
             }
         }
 
-        private void btnUpdatePackages_Click(object sender, EventArgs e)
+        private async void btnUpdatePackages_Click(object sender, EventArgs e)
         {
             if (isAnyPackageSelected())
             {
-                AutoChocoWithProgress("upgrade", "Upgrading package");
+                Task tsk = new Task(() => { AutoChocoWithProgress("upgrade", "Upgrading package"); });
+                tsk.Start();
+                await tsk;
             }
             else
             {
@@ -117,19 +201,21 @@ namespace Chocolatra
             }
         }
 
-        private void btnUninstallPackages_Click(object sender, EventArgs e)
+        private async void btnUninstallPackages_Click(object sender, EventArgs e)
         {
             if (isAnyPackageSelected())
             {
-                AutoChocoWithProgress("uninstall --remove-dependencies", "Uninstalling package");
+                Task tsk = new Task(() => { AutoChocoWithProgress("uninstall --remove-dependencies", "Uninstalling package"); });
+                tsk.Start();
+                await tsk;
+
             }
             else
             {
                 MessageBox.Show("You have to select a package to uninstall", "No packages selected for uninstallation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-
+        
         private void txtAddCommand_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -137,7 +223,6 @@ namespace Chocolatra
                 btnAdd.PerformClick();
             }
         }
-        #endregion
 
         #region Methods
         /// <summary>
@@ -186,7 +271,7 @@ namespace Chocolatra
                 {
                     pm.remove(box);
                 });
-
+                chkCheckAll.Checked = false;
                 RefreshList();
             }
             else
@@ -245,28 +330,6 @@ namespace Chocolatra
             chk.Size = new Size(panelListBoxContainer.Size.Width - 50, chk.Size.Height);
         }
 
-        /// <summary>
-        /// Creates a new instance of the FrmBrowser Form if It's not already open.
-        /// </summary>
-        private void OpenSite()
-        {
-            if (Application.OpenForms["FrmBrowser"] == null)
-            {
-                FrmBrowser browser = new FrmBrowser();
-                browser.Show();
-                browser.FormClosed += (send, ev) =>
-                {
-                    foreach (string package in browser.Chocolatras)
-                    {
-                        PackagesManagement pm = new PackagesManagement();
-                        pm.add(new string[] { package });
-
-                    }
-                    RefreshList();
-                };
-            }
-
-        }
 
         /// <summary>
         /// Change the color set of MaterialSkin library for the entire program.
@@ -326,33 +389,51 @@ namespace Chocolatra
             Cmd.RunAndWait("choco " + command + " " + package + " -y", true, style);
         }
 
-        #endregion
 
-        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void QuickLog(string msg)
         {
-            Environment.Exit(0);
+            lblQuickLog.Text = msg;
+            lblQuickLog.Visible = true;
         }
 
-        private void btnAddInstalledPackages_Click(object sender, EventArgs e)
+        private void HideLog()
+        {
+            lblQuickLog.Text = "...";
+            lblQuickLog.Visible = false;
+        }
+
+        private void addInstalledToList()
         {
             string output = Cmd.RunAndWaitWithOutput("choco list --local-only", ProcessWindowStyle.Hidden);
 
             output.Split('\n').ToList().ForEach((line) =>
             {
-                if ((!line.Contains("installed")) && line != "")
+                this.Invoke(new MethodInvoker(() =>
                 {
-                    PackagesManagement pm = new PackagesManagement();
-                    pm.add(new string[] { line.Split(' ')[0] });
-                    RefreshList();
-                }
+                    if ((!line.Contains("installed")) && line != "")
+                    {
+                        PackagesManagement pm = new PackagesManagement();
+                        pm.add(new string[] { line.Split(' ')[0] });
+                        RefreshList();
+                    }
+                    HideLog();
+                }));
             });
 
         }
 
-        private void btnAbout_Click(object sender, EventArgs e)
+
+        private void ToggleEnableButtonsInvoked(bool enable = true)
         {
-            FrmAbout about = new FrmAbout();
-            about.ShowDialog();
+            Invoke(new MethodInvoker(() =>
+            {
+                panelActionButtons.Enabled = panelChocolateyButtons.Enabled = enable;
+            }));
         }
+
+        #endregion
+
+
+
     }
 }

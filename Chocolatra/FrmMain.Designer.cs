@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblInternetConn = new System.Windows.Forms.Label();
+            this.lblQuickLog = new System.Windows.Forms.Label();
             this.lblInstalledMsg = new MaterialSkin.Controls.MaterialLabel();
             this.chkCheckAll = new MaterialSkin.Controls.MaterialCheckBox();
             this.panelListBoxContainer = new System.Windows.Forms.Panel();
@@ -49,15 +49,20 @@
             this.btnUpdatePackages = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnInstallPackages = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAbout = new MaterialSkin.Controls.MaterialRaisedButton();
             this.chkShowConsole = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnInstallChoco = new MaterialSkin.Controls.MaterialFlatButton();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAbout = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnUninstallChocolatey = new MaterialSkin.Controls.MaterialFlatButton();
+            this.panelActionButtons = new System.Windows.Forms.Panel();
+            this.panelChocolateyButtons = new System.Windows.Forms.Panel();
             this.panelMainContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelActionButtons.SuspendLayout();
+            this.panelChocolateyButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainContainer
@@ -77,7 +82,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblInternetConn);
+            this.panel1.Controls.Add(this.lblQuickLog);
             this.panel1.Controls.Add(this.lblInstalledMsg);
             this.panel1.Controls.Add(this.chkCheckAll);
             this.panel1.Controls.Add(this.panelListBoxContainer);
@@ -91,17 +96,17 @@
             this.panel1.Size = new System.Drawing.Size(743, 283);
             this.panel1.TabIndex = 15;
             // 
-            // lblInternetConn
+            // lblQuickLog
             // 
-            this.lblInternetConn.AutoSize = true;
-            this.lblInternetConn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInternetConn.ForeColor = System.Drawing.Color.Red;
-            this.lblInternetConn.Location = new System.Drawing.Point(289, 19);
-            this.lblInternetConn.Name = "lblInternetConn";
-            this.lblInternetConn.Size = new System.Drawing.Size(427, 20);
-            this.lblInternetConn.TabIndex = 14;
-            this.lblInternetConn.Text = "Attention: This tool needs an active internet connection to work";
-            this.lblInternetConn.Visible = false;
+            this.lblQuickLog.AutoSize = true;
+            this.lblQuickLog.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuickLog.ForeColor = System.Drawing.Color.Orange;
+            this.lblQuickLog.Location = new System.Drawing.Point(138, 4);
+            this.lblQuickLog.Name = "lblQuickLog";
+            this.lblQuickLog.Size = new System.Drawing.Size(18, 20);
+            this.lblQuickLog.TabIndex = 14;
+            this.lblQuickLog.Text = "...";
+            this.lblQuickLog.Visible = false;
             // 
             // lblInstalledMsg
             // 
@@ -239,10 +244,8 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.materialLabel1);
             this.panel2.Controls.Add(this.prgProgress);
-            this.panel2.Controls.Add(this.btnUninstallPackages);
             this.panel2.Controls.Add(this.lblProgress);
-            this.panel2.Controls.Add(this.btnUpdatePackages);
-            this.panel2.Controls.Add(this.btnInstallPackages);
+            this.panel2.Controls.Add(this.panelActionButtons);
             this.panel2.Location = new System.Drawing.Point(7, 296);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(743, 173);
@@ -275,7 +278,7 @@
             this.btnUninstallPackages.AutoSize = true;
             this.btnUninstallPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUninstallPackages.Depth = 0;
-            this.btnUninstallPackages.Location = new System.Drawing.Point(499, 58);
+            this.btnUninstallPackages.Location = new System.Drawing.Point(456, 15);
             this.btnUninstallPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUninstallPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUninstallPackages.Name = "btnUninstallPackages";
@@ -306,7 +309,7 @@
             this.btnUpdatePackages.AutoSize = true;
             this.btnUpdatePackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdatePackages.Depth = 0;
-            this.btnUpdatePackages.Location = new System.Drawing.Point(275, 58);
+            this.btnUpdatePackages.Location = new System.Drawing.Point(232, 15);
             this.btnUpdatePackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdatePackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdatePackages.Name = "btnUpdatePackages";
@@ -323,7 +326,7 @@
             this.btnInstallPackages.AutoSize = true;
             this.btnInstallPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnInstallPackages.Depth = 0;
-            this.btnInstallPackages.Location = new System.Drawing.Point(59, 58);
+            this.btnInstallPackages.Location = new System.Drawing.Point(16, 15);
             this.btnInstallPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnInstallPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnInstallPackages.Name = "btnInstallPackages";
@@ -341,11 +344,24 @@
             this.panel3.Controls.Add(this.btnAbout);
             this.panel3.Controls.Add(this.chkShowConsole);
             this.panel3.Controls.Add(this.materialLabel2);
-            this.panel3.Controls.Add(this.btnInstallChoco);
+            this.panel3.Controls.Add(this.panelChocolateyButtons);
             this.panel3.Location = new System.Drawing.Point(7, 475);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(743, 61);
             this.panel3.TabIndex = 17;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Depth = 0;
+            this.btnAbout.Location = new System.Drawing.Point(671, 14);
+            this.btnAbout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Primary = true;
+            this.btnAbout.Size = new System.Drawing.Size(45, 33);
+            this.btnAbout.TabIndex = 14;
+            this.btnAbout.Text = "?";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // chkShowConsole
             // 
@@ -354,7 +370,7 @@
             this.chkShowConsole.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkShowConsole.Depth = 0;
             this.chkShowConsole.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkShowConsole.Location = new System.Drawing.Point(357, 14);
+            this.chkShowConsole.Location = new System.Drawing.Point(443, 10);
             this.chkShowConsole.Margin = new System.Windows.Forms.Padding(0);
             this.chkShowConsole.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkShowConsole.MouseState = MaterialSkin.MouseState.HOVER;
@@ -386,14 +402,14 @@
             this.btnInstallChoco.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnInstallChoco.Depth = 0;
             this.btnInstallChoco.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInstallChoco.Location = new System.Drawing.Point(142, 11);
+            this.btnInstallChoco.Location = new System.Drawing.Point(4, 9);
             this.btnInstallChoco.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnInstallChoco.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnInstallChoco.Name = "btnInstallChoco";
             this.btnInstallChoco.Primary = false;
-            this.btnInstallChoco.Size = new System.Drawing.Size(192, 36);
+            this.btnInstallChoco.Size = new System.Drawing.Size(157, 36);
             this.btnInstallChoco.TabIndex = 6;
-            this.btnInstallChoco.Text = "Install Chocolatey Now";
+            this.btnInstallChoco.Text = "Install Chocolatey";
             this.toolTip.SetToolTip(this.btnInstallChoco, "Run the powershell script to download and install Chocolatey if You haven\'t done " +
         "It yet.\r\nNOTE: This program will not work without Chocolatey installed on your c" +
         "omputer.");
@@ -407,18 +423,41 @@
             this.toolTip.InitialDelay = 300;
             this.toolTip.ReshowDelay = 60;
             // 
-            // btnAbout
+            // btnUninstallChocolatey
             // 
-            this.btnAbout.Depth = 0;
-            this.btnAbout.Location = new System.Drawing.Point(671, 14);
-            this.btnAbout.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Primary = true;
-            this.btnAbout.Size = new System.Drawing.Size(45, 33);
-            this.btnAbout.TabIndex = 14;
-            this.btnAbout.Text = "?";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnUninstallChocolatey.AutoSize = true;
+            this.btnUninstallChocolatey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUninstallChocolatey.Depth = 0;
+            this.btnUninstallChocolatey.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUninstallChocolatey.Location = new System.Drawing.Point(169, 9);
+            this.btnUninstallChocolatey.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUninstallChocolatey.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUninstallChocolatey.Name = "btnUninstallChocolatey";
+            this.btnUninstallChocolatey.Primary = false;
+            this.btnUninstallChocolatey.Size = new System.Drawing.Size(176, 36);
+            this.btnUninstallChocolatey.TabIndex = 6;
+            this.btnUninstallChocolatey.Text = "Uninstall Chocolatey";
+            this.btnUninstallChocolatey.UseVisualStyleBackColor = true;
+            this.btnUninstallChocolatey.Click += new System.EventHandler(this.btnUninstallChocolatey_Click);
+            // 
+            // panelActionButtons
+            // 
+            this.panelActionButtons.Controls.Add(this.btnInstallPackages);
+            this.panelActionButtons.Controls.Add(this.btnUpdatePackages);
+            this.panelActionButtons.Controls.Add(this.btnUninstallPackages);
+            this.panelActionButtons.Location = new System.Drawing.Point(40, 39);
+            this.panelActionButtons.Name = "panelActionButtons";
+            this.panelActionButtons.Size = new System.Drawing.Size(698, 65);
+            this.panelActionButtons.TabIndex = 12;
+            // 
+            // panelChocolateyButtons
+            // 
+            this.panelChocolateyButtons.Controls.Add(this.btnInstallChoco);
+            this.panelChocolateyButtons.Controls.Add(this.btnUninstallChocolatey);
+            this.panelChocolateyButtons.Location = new System.Drawing.Point(69, 1);
+            this.panelChocolateyButtons.Name = "panelChocolateyButtons";
+            this.panelChocolateyButtons.Size = new System.Drawing.Size(355, 55);
+            this.panelChocolateyButtons.TabIndex = 15;
             // 
             // FrmMain
             // 
@@ -434,7 +473,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Chocolatra - The Chocolatey Packages Automator";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.panelMainContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -443,6 +481,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelActionButtons.ResumeLayout(false);
+            this.panelActionButtons.PerformLayout();
+            this.panelChocolateyButtons.ResumeLayout(false);
+            this.panelChocolateyButtons.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -466,13 +508,16 @@
         private MaterialSkin.Controls.MaterialFlatButton btnInstallPackages;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialCheckBox chkShowConsole;
-        private System.Windows.Forms.Label lblInternetConn;
+        private System.Windows.Forms.Label lblQuickLog;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialFlatButton btnAddInstalledPackages;
         private MaterialSkin.Controls.MaterialRaisedButton btnAbout;
+        private MaterialSkin.Controls.MaterialFlatButton btnUninstallChocolatey;
+        private System.Windows.Forms.Panel panelActionButtons;
+        private System.Windows.Forms.Panel panelChocolateyButtons;
     }
 }
 
