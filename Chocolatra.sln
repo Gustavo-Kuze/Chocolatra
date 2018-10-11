@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolatra", "Chocolatra\Chocolatra.csproj", "{F6998E8F-B123-4EA7-A85F-58E99E27D00D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6998E8F-B123-4EA7-A85F-58E99E27D00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6998E8F-B123-4EA7-A85F-58E99E27D00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6998E8F-B123-4EA7-A85F-58E99E27D00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6998E8F-B123-4EA7-A85F-58E99E27D00D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49914F34-9FD6-4BBD-92B5-7EA4A6C91A71}
+	EndGlobalSection
+EndGlobal
