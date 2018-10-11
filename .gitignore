@@ -1,5 +1,12 @@
-
-.vs/
-bin/
 obj/
 packages/
+Chocolatra/bin/Debug/Chocolatra.exe
+Chocolatra/bin/Debug/Chocolatra.exe.config
+Chocolatra/bin/Debug/Chocolatra.pdb
+Chocolatra/bin/Debug/MaterialSkin.dll
+Chocolatra/bin/Debug/packages
+Chocolatra/bin/Release/Chocolatra.exe
+Chocolatra/bin/Release/Chocolatra.exe.config
+Chocolatra/bin/Release/Chocolatra.pdb
+Chocolatra/bin/Release/MaterialSkin.dll
+Chocolatra/bin/Release/packages
