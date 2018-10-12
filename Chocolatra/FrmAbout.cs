@@ -16,6 +16,17 @@ namespace Chocolatra
         public FrmAbout()
         { 
             InitializeComponent();
+            TranslateForm();
+        }
+
+        private void TranslateForm()
+        {
+            var lines = Translation.Engine.Lines;
+            Text = lines["frmabouttitle"];
+            lblBy.Text = lines["lblby"];
+            txtDescription.Text = lines["frmaboutdescription"];
+            btnGithub.Text = lines["btngithub"];
+
         }
 
         private void FrmAbout_Load(object sender, EventArgs e)
