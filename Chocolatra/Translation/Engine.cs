@@ -49,7 +49,7 @@ namespace Chocolatra.Translation
                 {"mboxnopackagesselectedtitle", "No packages selected"},
                 {"mboxnopackagesselectedtext", "You have to select a package on the automation row first"},
                 {"frmbrowsertitle", "Chocolatra - Choose a package online"},
-                {"lbladdedpackageslist", "Packages added to Chocolatra"},
+                {"lbladdedpackageslist", "Added Packages"},
                 {"btntogglepackageslist", "Toggle Packages List"},
                 {"btncancel", "Cancel"},
                 {"btnok", "Ok"},

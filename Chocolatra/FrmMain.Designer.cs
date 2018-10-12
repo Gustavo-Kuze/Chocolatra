@@ -127,7 +127,7 @@
             this.chkCheckAll.AutoSize = true;
             this.chkCheckAll.Depth = 0;
             this.chkCheckAll.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkCheckAll.Location = new System.Drawing.Point(49, 37);
+            this.chkCheckAll.Location = new System.Drawing.Point(40, 39);
             this.chkCheckAll.Margin = new System.Windows.Forms.Padding(0);
             this.chkCheckAll.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkCheckAll.MouseState = MaterialSkin.MouseState.HOVER;
@@ -154,9 +154,10 @@
             // 
             // txtAddCommand
             // 
+            this.txtAddCommand.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtAddCommand.Depth = 0;
             this.txtAddCommand.Hint = "Chocolatey package name to add";
-            this.txtAddCommand.Location = new System.Drawing.Point(171, 41);
+            this.txtAddCommand.Location = new System.Drawing.Point(186, 41);
             this.txtAddCommand.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtAddCommand.Name = "txtAddCommand";
             this.txtAddCommand.PasswordChar = '\0';
@@ -210,7 +211,7 @@
             this.btnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRemove.Depth = 0;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(490, 28);
+            this.btnRemove.Location = new System.Drawing.Point(528, 28);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRemove.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRemove.Name = "btnRemove";
@@ -341,7 +342,7 @@
             this.btnUpdatePackages.AutoSize = true;
             this.btnUpdatePackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdatePackages.Depth = 0;
-            this.btnUpdatePackages.Location = new System.Drawing.Point(167, 15);
+            this.btnUpdatePackages.Location = new System.Drawing.Point(237, 15);
             this.btnUpdatePackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdatePackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdatePackages.Name = "btnUpdatePackages";
@@ -358,7 +359,7 @@
             this.btnUninstallPackages.AutoSize = true;
             this.btnUninstallPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUninstallPackages.Depth = 0;
-            this.btnUninstallPackages.Location = new System.Drawing.Point(322, 15);
+            this.btnUninstallPackages.Location = new System.Drawing.Point(457, 15);
             this.btnUninstallPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUninstallPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUninstallPackages.Name = "btnUninstallPackages";
