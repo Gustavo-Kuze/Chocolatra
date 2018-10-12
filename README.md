@@ -7,5 +7,5 @@ I'm currently working on the code, so there's no documentation Yet. However, You
 </p>
 
 
-NOTE: Chocolatra needs Chocolatra installed on Your system for It to work. If that's not your case, don't worry. You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button.
+NOTE: Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry. You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button.
 
