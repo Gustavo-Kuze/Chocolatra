@@ -7,7 +7,7 @@ I'm currently working on the code, so there's no documentation Yet. However, You
 </p>
 
 <h1>Installation</h1>
-Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for download and installing automatically.
+Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
 
 Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
 ```
