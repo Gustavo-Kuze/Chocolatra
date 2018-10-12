@@ -174,9 +174,10 @@ namespace Chocolatra
 
         private async void btnInstallPackages_Click(object sender, EventArgs e)
         {
-            if (isAnyPackageSelected())
+            if (isAnyPackageSelected()) 
             {
-                Task tsk = new Task(() => { AutoChocoWithProgress("install", "Installing package"); });
+                string forceDependencies = (chkForceDependenciesInstall.Checked)? " --force --force-dependencies ":"";
+                Task tsk = new Task(() => { AutoChocoWithProgress("install"+forceDependencies, "Installing package"); });
                 tsk.Start();
                 await tsk;
 
@@ -205,10 +206,10 @@ namespace Chocolatra
         {
             if (isAnyPackageSelected())
             {
-                Task tsk = new Task(() => { AutoChocoWithProgress("uninstall --remove-dependencies", "Uninstalling package"); });
+                string removeDependencies = (chkUninstallDependencies.Checked) ? " --remove-dependencies " : "";
+                Task tsk = new Task(() => { AutoChocoWithProgress("uninstall"+removeDependencies, "Uninstalling package"); });
                 tsk.Start();
                 await tsk;
-
             }
             else
             {
