@@ -70,7 +70,7 @@ Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e col
 
 * Você pode procurar pode pacotes instalados ao clicar em "add installed packages", o que fará uma busca por pacotes Chocolatey instalados préviamente em seu sistema;
 
-* Or You can get packages directly from the website by clicking in "Online search". When You do so, a new integrated webbrowser window will open up with the a customized version of Chocolatey Website. You can simply click on the "Add to Chocolatra" buttons to add the packages to the list on your left. You can click the list item to remove It too. When You close the browser, all selected packages will be added to the automation row.
+* Ou você pode pegar os pacotes diretamente pelo site ao clicar em "Online search". Quando fizer isso, uma nova janela com um navegador integrado se abrirá com uma versão customizada do site do Chocolatey. Você pode então clicar nos botões "Add to Chocolatra"para adicionar os pacotes à lista na esquerda. Você pode remover os itens da lista ao clicar neles.Quando fechar o navegador, os pacotes serão adicionados à fila de automação.
 
 2. Now You have to check all packages that You want to manipulate, and choose an Action, like "Install Packages" for example. The packages Will suffer the Action sequentially, showing You the progress during Its execution.
 
