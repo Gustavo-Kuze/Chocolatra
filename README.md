@@ -6,3 +6,6 @@
 I'm currently working on the code, so there's no documentation Yet. However, You can already download and try the latest <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">release</a>! I Hope You enjoy It!
 </p>
 
+
+NOTE: Chocolatra needs Chocolatra installed on Your system for It to work. If that's not your case, don't worry. You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button.
+
