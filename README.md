@@ -32,3 +32,7 @@ Or if You would prefer to install It manually, simply run cmd as administrator a
 <h2>The packages file</h2>
 Everytime Chocolatra is open, It will create a "packages" file if not found. This file is a pretty lazy Database for your saved packages.
 So, if You want to move Chocolatra to another directory and You want to keep the packages saved, You need to move the packages file along with the main executable and the MaterialSkin.dll!
+
+
+<h4>The future</h4>
+I have plans to add a translation engine to the program, so people can add their own and help me out with that, but please note that I'm the only developer of this tool so far and I don't have much time, so It will take a while until this project is mature enough to become as BIG as I want!
