@@ -13,8 +13,11 @@ namespace Chocolatra
 {
     public partial class FrmMain : MaterialForm
     {
+        private Utils.GUI Gui;
+
         public FrmMain()
         {
+            Gui = new Utils.GUI(this);
             InitializeComponent();
             setMaterialThemeColors();
         }
@@ -26,8 +29,7 @@ namespace Chocolatra
             task.Start();
             await task;
         }
-
-        #region More
+        
         private void btnAbout_Click(object sender, EventArgs e)
         {
             FrmAbout about = new FrmAbout();
@@ -36,7 +38,7 @@ namespace Chocolatra
 
         private async void btnInstallChoco_Click(object sender, EventArgs e)
         {
-            ToggleEnableButtonsInvoked(false);
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons }, false);
             Task tsk = new Task(() =>
             {
                 ProcessWindowStyle style = ProcessWindowStyle.Hidden;
@@ -52,7 +54,7 @@ namespace Chocolatra
             });
             tsk.Start();
             await tsk;
-            ToggleEnableButtonsInvoked(true);
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons });
         }
 
 
@@ -71,8 +73,7 @@ namespace Chocolatra
                 }
             }
         }
-
-        #endregion
+        
         
         private void btnOpenSite_Click(object sender, EventArgs e)
         {
@@ -139,9 +140,9 @@ namespace Chocolatra
 
        
 
-        private void AutoChocoWithProgress(string command, string logMessage)
+        private void StartChocoWithPrgss(string command, string logMessage)
         {
-            ToggleEnableButtonsInvoked(false);
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons }, false);
             var boxes = GetCheckedBoxesText();
             int currentIndex = 1;
             Invoke(new MethodInvoker(() =>
@@ -159,24 +160,25 @@ namespace Chocolatra
                     lblProgress.Text = logMessage + " " + box + " - " + (currentIndex) + "/" + boxes.Count();
                 }));
 
-                RunChoco(box, command);
+                Choco.RunChoco(box, command, chkShowConsole.Checked);
                 ++currentIndex;
-            });
+            }); 
             Invoke(new MethodInvoker(() =>
             {
                 prgProgress.Visible = false;
                 lblProgress.Visible = false;
             }));
-            ToggleEnableButtonsInvoked(true);
 
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons});
         }
 
 
         private async void btnInstallPackages_Click(object sender, EventArgs e)
         {
-            if (isAnyPackageSelected())
+            if (isAnyPackageSelected()) 
             {
-                Task tsk = new Task(() => { AutoChocoWithProgress("install", "Installing package"); });
+                string forceDependencies = (chkForceDependencies.Checked)? " --force --force-dependencies ":"";
+                Task tsk = new Task(() => { StartChocoWithPrgss("install"+forceDependencies, "Installing package"); });
                 tsk.Start();
                 await tsk;
 
@@ -191,7 +193,7 @@ namespace Chocolatra
         {
             if (isAnyPackageSelected())
             {
-                Task tsk = new Task(() => { AutoChocoWithProgress("upgrade", "Upgrading package"); });
+                Task tsk = new Task(() => { StartChocoWithPrgss("upgrade", "Upgrading package"); });
                 tsk.Start();
                 await tsk;
             }
@@ -205,10 +207,10 @@ namespace Chocolatra
         {
             if (isAnyPackageSelected())
             {
-                Task tsk = new Task(() => { AutoChocoWithProgress("uninstall --remove-dependencies", "Uninstalling package"); });
+                string removeDependencies = (chkForceDependencies.Checked) ? " --remove-dependencies " : "";
+                Task tsk = new Task(() => { StartChocoWithPrgss("uninstall"+removeDependencies, "Uninstalling package"); });
                 tsk.Start();
                 await tsk;
-
             }
             else
             {
@@ -223,8 +225,7 @@ namespace Chocolatra
                 btnAdd.PerformClick();
             }
         }
-
-        #region Methods
+        
         /// <summary>
         /// Changes the checked state of all checkboxes inside panelListBoxContainer
         /// </summary>
@@ -373,22 +374,6 @@ namespace Chocolatra
             return checkedBoxes;
         }
 
-        /// <summary>
-        /// Run chocolatey command using command prompt
-        /// </summary>
-        /// <param name="package">The name of the package to be passed as argument to Choco</param>
-        /// <param name="command">What should the Choco tool do with the given package</param>
-        private void RunChoco(string package, string command)
-        {
-            ProcessWindowStyle style = ProcessWindowStyle.Hidden;
-            if (chkShowConsole.Checked)
-            {
-                style = ProcessWindowStyle.Normal;
-            }
-
-            Cmd.RunAndWait("choco " + command + " " + package + " -y", true, style);
-        }
-
 
         private void QuickLog(string msg)
         {
@@ -421,16 +406,5 @@ namespace Chocolatra
             });
 
         }
-
-
-        private void ToggleEnableButtonsInvoked(bool enable = true)
-        {
-            Invoke(new MethodInvoker(() =>
-            {
-                panelActionButtons.Enabled = panelChocolateyButtons.Enabled = enable;
-            }));
-        }
-
-        #endregion
     }
 }
