@@ -48,8 +48,8 @@ I have plans to add a translation engine to the program, so people can add their
 Atualmente estou trabalhando no código, Então ainda não existe nenhuma documentação. Contudo, você já pode baixar e testar a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a>! Espero que você goste!
 </p>
 
-<h1>Installation</h1>
-Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
+<h1>Instalação</h1>
+O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
 
 Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
 ```
