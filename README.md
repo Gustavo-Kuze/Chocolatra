@@ -1,5 +1,6 @@
 <img src="https://github.com/Gustavo-Kuze/Chocolatra/blob/master/Chocolatra/assets/chocolatra_icon.png" width="25%" />
 <h6>Instruções em Português no final da página!</h6>
+____
 <h5>EN-US</h5>
 <h1>Welcome to Chocolatra</h1>
 
@@ -39,6 +40,8 @@ So, if You want to move Chocolatra to another directory and You want to keep the
 <h4>The future</h4>
 I have plans to add a translation engine to the program, so people can add their own and help me out with that, but please note that I'm the only developer of this tool so far and I don't have much time, so It will take a while until this project is mature enough to become as BIG as I want!
 
+____
+
 <h5>PT-BR</h5>
 
 <h1>Bem-vindo ao Chocolatra</h1>
@@ -51,14 +54,14 @@ Atualmente estou trabalhando no código, Então ainda não existe nenhuma docume
 <h1>Instalação</h1>
 O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
 
-Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
+Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e cole o seguinte script:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 ```
-<h1>Usage</h1>
+<h1>Uso</h1>
 
-<h2>Installing upgrading and removing packages automatically</h2>
+<h2>Instalando, atualizando e removendo pacotes</h2>
 
 1. First of all, You need to add your packages to the automation row. There are a few ways You can do It:
 * You can type the package name on the text field, and press enter or click the add button;
