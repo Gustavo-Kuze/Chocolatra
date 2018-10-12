@@ -16,4 +16,15 @@ Or if You would prefer to install It manually, simply run cmd as administrator a
 ```
 <h1>Usage</h1>
 
-TODO...
+<h2>Installing upgrading and removing packages automatically</h2>
+
+1. First of all, You need to add your packages to the automation row. There are a few ways You can do It:
+* You can type the package name on the text field, and press enter or click the add button;
+
+* You can look for installed packages by clicking the "add installed packages" button, which will Choco search in your system for Chocolatey programs;
+
+* Or You can get packages directly from the website by clicking in "Online search". When You do so, a new integrated webbrowser window will open up with the a customized version of Chocolatey Website. You can simply click on the "Add to Chocolatra" buttons to add the packages to the list on your left. You can click the list item to remove It too. When You close the browser, all selected packages will be added to the automation row.
+
+2. Now You have to check all packages that You want to manipulate, and choose an Action, like "Install Packages" for example. The packages Will suffer the Action sequentially, showing You the progress during Its execution.
+
+3. That's It!
