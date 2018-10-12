@@ -47,6 +47,7 @@
             this.lblProgress = new MaterialSkin.Controls.MaterialLabel();
             this.panelActionButtons = new System.Windows.Forms.Panel();
             this.btnInstallPackages = new MaterialSkin.Controls.MaterialFlatButton();
+            this.chkForceDependencies = new MaterialSkin.Controls.MaterialCheckBox();
             this.btnUpdatePackages = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnUninstallPackages = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,8 +58,6 @@
             this.btnInstallChoco = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnUninstallChocolatey = new MaterialSkin.Controls.MaterialFlatButton();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkForceDependenciesInstall = new MaterialSkin.Controls.MaterialCheckBox();
-            this.chkUninstallDependencies = new MaterialSkin.Controls.MaterialCheckBox();
             this.panelMainContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,7 +127,7 @@
             this.chkCheckAll.AutoSize = true;
             this.chkCheckAll.Depth = 0;
             this.chkCheckAll.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkCheckAll.Location = new System.Drawing.Point(35, 29);
+            this.chkCheckAll.Location = new System.Drawing.Point(49, 37);
             this.chkCheckAll.Margin = new System.Windows.Forms.Padding(0);
             this.chkCheckAll.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkCheckAll.MouseState = MaterialSkin.MouseState.HOVER;
@@ -147,9 +146,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelListBoxContainer.AutoScroll = true;
             this.panelListBoxContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelListBoxContainer.Location = new System.Drawing.Point(26, 62);
+            this.panelListBoxContainer.Location = new System.Drawing.Point(40, 70);
             this.panelListBoxContainer.Name = "panelListBoxContainer";
-            this.panelListBoxContainer.Size = new System.Drawing.Size(433, 207);
+            this.panelListBoxContainer.Size = new System.Drawing.Size(382, 195);
             this.panelListBoxContainer.TabIndex = 2;
             this.toolTip.SetToolTip(this.panelListBoxContainer, "The saved packages will be displayed here");
             // 
@@ -157,14 +156,14 @@
             // 
             this.txtAddCommand.Depth = 0;
             this.txtAddCommand.Hint = "Chocolatey package name to add";
-            this.txtAddCommand.Location = new System.Drawing.Point(482, 74);
+            this.txtAddCommand.Location = new System.Drawing.Point(440, 77);
             this.txtAddCommand.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtAddCommand.Name = "txtAddCommand";
             this.txtAddCommand.PasswordChar = '\0';
             this.txtAddCommand.SelectedText = "";
             this.txtAddCommand.SelectionLength = 0;
             this.txtAddCommand.SelectionStart = 0;
-            this.txtAddCommand.Size = new System.Drawing.Size(234, 23);
+            this.txtAddCommand.Size = new System.Drawing.Size(251, 23);
             this.txtAddCommand.TabIndex = 3;
             this.txtAddCommand.UseSystemPasswordChar = false;
             this.txtAddCommand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAddCommand_KeyUp);
@@ -174,7 +173,7 @@
             this.btnAddInstalledPackages.AutoSize = true;
             this.btnAddInstalledPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAddInstalledPackages.Depth = 0;
-            this.btnAddInstalledPackages.Location = new System.Drawing.Point(466, 185);
+            this.btnAddInstalledPackages.Location = new System.Drawing.Point(443, 181);
             this.btnAddInstalledPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddInstalledPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddInstalledPackages.Name = "btnAddInstalledPackages";
@@ -193,7 +192,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(508, 106);
+            this.btnAdd.Location = new System.Drawing.Point(698, 70);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
@@ -201,7 +200,7 @@
             this.btnAdd.Size = new System.Drawing.Size(39, 36);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD";
-            this.toolTip.SetToolTip(this.btnAdd, "Add a package to the automation row");
+            this.toolTip.SetToolTip(this.btnAdd, "Adds the typed package to the automation row");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -211,7 +210,7 @@
             this.btnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRemove.Depth = 0;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(555, 106);
+            this.btnRemove.Location = new System.Drawing.Point(443, 109);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRemove.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRemove.Name = "btnRemove";
@@ -219,7 +218,7 @@
             this.btnRemove.Size = new System.Drawing.Size(135, 36);
             this.btnRemove.TabIndex = 4;
             this.btnRemove.Text = "Remove selected";
-            this.toolTip.SetToolTip(this.btnRemove, "Remove the selected packages from the automation row");
+            this.toolTip.SetToolTip(this.btnRemove, "Removes the checked packages from the automation row");
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -229,7 +228,7 @@
             this.btnOpenSite.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnOpenSite.Depth = 0;
             this.btnOpenSite.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenSite.Location = new System.Drawing.Point(466, 233);
+            this.btnOpenSite.Location = new System.Drawing.Point(443, 229);
             this.btnOpenSite.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnOpenSite.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnOpenSite.Name = "btnOpenSite";
@@ -292,8 +291,7 @@
             // panelActionButtons
             // 
             this.panelActionButtons.Controls.Add(this.btnInstallPackages);
-            this.panelActionButtons.Controls.Add(this.chkUninstallDependencies);
-            this.panelActionButtons.Controls.Add(this.chkForceDependenciesInstall);
+            this.panelActionButtons.Controls.Add(this.chkForceDependencies);
             this.panelActionButtons.Controls.Add(this.btnUpdatePackages);
             this.panelActionButtons.Controls.Add(this.btnUninstallPackages);
             this.panelActionButtons.Location = new System.Drawing.Point(40, 25);
@@ -317,6 +315,26 @@
             this.toolTip.SetToolTip(this.btnInstallPackages, "It will install all packages that are saved on the automation row");
             this.btnInstallPackages.UseVisualStyleBackColor = true;
             this.btnInstallPackages.Click += new System.EventHandler(this.btnInstallPackages_Click);
+            // 
+            // chkForceDependencies
+            // 
+            this.chkForceDependencies.AutoSize = true;
+            this.chkForceDependencies.Checked = true;
+            this.chkForceDependencies.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkForceDependencies.Depth = 0;
+            this.chkForceDependencies.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chkForceDependencies.Location = new System.Drawing.Point(19, 48);
+            this.chkForceDependencies.Margin = new System.Windows.Forms.Padding(0);
+            this.chkForceDependencies.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkForceDependencies.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkForceDependencies.Name = "chkForceDependencies";
+            this.chkForceDependencies.Ripple = true;
+            this.chkForceDependencies.Size = new System.Drawing.Size(154, 30);
+            this.chkForceDependencies.TabIndex = 13;
+            this.chkForceDependencies.Text = "Force dependencies";
+            this.toolTip.SetToolTip(this.chkForceDependencies, "When Installing, this adds --force and --force-dependencies \r\ncommandline argumen" +
+        "ts to choco.\r\nWhen Uninstalling this adds --remove-dependencies  to choco.");
+            this.chkForceDependencies.UseVisualStyleBackColor = true;
             // 
             // btnUpdatePackages
             // 
@@ -403,7 +421,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(4, 14);
+            this.materialLabel2.Location = new System.Drawing.Point(4, 1);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(44, 19);
@@ -462,46 +480,6 @@
             this.toolTip.AutoPopDelay = 15000;
             this.toolTip.InitialDelay = 300;
             this.toolTip.ReshowDelay = 60;
-            // 
-            // chkForceDependenciesInstall
-            // 
-            this.chkForceDependenciesInstall.AutoSize = true;
-            this.chkForceDependenciesInstall.Checked = true;
-            this.chkForceDependenciesInstall.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkForceDependenciesInstall.Depth = 0;
-            this.chkForceDependenciesInstall.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkForceDependenciesInstall.Location = new System.Drawing.Point(19, 57);
-            this.chkForceDependenciesInstall.Margin = new System.Windows.Forms.Padding(0);
-            this.chkForceDependenciesInstall.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkForceDependenciesInstall.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkForceDependenciesInstall.Name = "chkForceDependenciesInstall";
-            this.chkForceDependenciesInstall.Ripple = true;
-            this.chkForceDependenciesInstall.Size = new System.Drawing.Size(226, 30);
-            this.chkForceDependenciesInstall.TabIndex = 13;
-            this.chkForceDependenciesInstall.Text = "Force dependencies installation";
-            this.toolTip.SetToolTip(this.chkForceDependenciesInstall, "Adds --force and --force-dependencies \r\ncommandline arguments to choco while inst" +
-        "alling");
-            this.chkForceDependenciesInstall.UseVisualStyleBackColor = true;
-            // 
-            // chkUninstallDependencies
-            // 
-            this.chkUninstallDependencies.AutoSize = true;
-            this.chkUninstallDependencies.Checked = true;
-            this.chkUninstallDependencies.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUninstallDependencies.Depth = 0;
-            this.chkUninstallDependencies.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkUninstallDependencies.Location = new System.Drawing.Point(456, 57);
-            this.chkUninstallDependencies.Margin = new System.Windows.Forms.Padding(0);
-            this.chkUninstallDependencies.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkUninstallDependencies.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkUninstallDependencies.Name = "chkUninstallDependencies";
-            this.chkUninstallDependencies.Ripple = true;
-            this.chkUninstallDependencies.Size = new System.Drawing.Size(197, 30);
-            this.chkUninstallDependencies.TabIndex = 13;
-            this.chkUninstallDependencies.Text = "Uninstall dependencies too";
-            this.toolTip.SetToolTip(this.chkUninstallDependencies, "Adds --remove-dependencies commandline arguments\r\nto choco while uninstalling the" +
-        " package.");
-            this.chkUninstallDependencies.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
@@ -562,8 +540,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnUninstallChocolatey;
         private System.Windows.Forms.Panel panelActionButtons;
         private System.Windows.Forms.Panel panelChocolateyButtons;
-        private MaterialSkin.Controls.MaterialCheckBox chkUninstallDependencies;
-        private MaterialSkin.Controls.MaterialCheckBox chkForceDependenciesInstall;
+        private MaterialSkin.Controls.MaterialCheckBox chkForceDependencies;
     }
 }
 
