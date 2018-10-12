@@ -432,8 +432,5 @@ namespace Chocolatra
         }
 
         #endregion
-
-
-
     }
 }

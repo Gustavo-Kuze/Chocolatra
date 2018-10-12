@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBrowser));
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.btnBrowserOk = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelWebBrowserContainer = new System.Windows.Forms.Panel();
             this.btnBrowserCancel = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panelChocolatrasDrawer = new System.Windows.Forms.Panel();
+            this.panelChocolatrasContainer = new System.Windows.Forms.Panel();
+            this.btnToggleDrawer = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelWebBrowserContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelChocolatrasDrawer.SuspendLayout();
             this.SuspendLayout();
             // 
             // webBrowser
@@ -95,16 +99,57 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(44)))), ((int)(((byte)(1)))));
+            this.panel1.Controls.Add(this.btnToggleDrawer);
             this.panel1.Location = new System.Drawing.Point(-1, 601);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 63);
             this.panel1.TabIndex = 3;
             // 
-            // imageList1
+            // panelChocolatrasDrawer
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.panelChocolatrasDrawer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelChocolatrasDrawer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(44)))), ((int)(((byte)(1)))));
+            this.panelChocolatrasDrawer.Controls.Add(this.label1);
+            this.panelChocolatrasDrawer.Controls.Add(this.panelChocolatrasContainer);
+            this.panelChocolatrasDrawer.Location = new System.Drawing.Point(0, 314);
+            this.panelChocolatrasDrawer.Name = "panelChocolatrasDrawer";
+            this.panelChocolatrasDrawer.Size = new System.Drawing.Size(245, 294);
+            this.panelChocolatrasDrawer.TabIndex = 4;
+            // 
+            // panelChocolatrasContainer
+            // 
+            this.panelChocolatrasContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelChocolatrasContainer.AutoScroll = true;
+            this.panelChocolatrasContainer.Location = new System.Drawing.Point(4, 45);
+            this.panelChocolatrasContainer.Name = "panelChocolatrasContainer";
+            this.panelChocolatrasContainer.Size = new System.Drawing.Size(236, 237);
+            this.panelChocolatrasContainer.TabIndex = 1;
+            // 
+            // btnToggleDrawer
+            // 
+            this.btnToggleDrawer.Depth = 0;
+            this.btnToggleDrawer.Location = new System.Drawing.Point(7, 13);
+            this.btnToggleDrawer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnToggleDrawer.Name = "btnToggleDrawer";
+            this.btnToggleDrawer.Primary = true;
+            this.btnToggleDrawer.Size = new System.Drawing.Size(236, 37);
+            this.btnToggleDrawer.TabIndex = 2;
+            this.btnToggleDrawer.Text = "Toggle Packages List";
+            this.btnToggleDrawer.UseVisualStyleBackColor = true;
+            this.btnToggleDrawer.Click += new System.EventHandler(this.btnToggleDrawer_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Packages added to Chocolatra";
             // 
             // FrmBrowser
             // 
@@ -112,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 654);
             this.ControlBox = false;
+            this.Controls.Add(this.panelChocolatrasDrawer);
             this.Controls.Add(this.panelWebBrowserContainer);
             this.Controls.Add(this.btnBrowserCancel);
             this.Controls.Add(this.btnBrowserOk);
@@ -124,6 +170,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBrowser_Load);
             this.panelWebBrowserContainer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelChocolatrasDrawer.ResumeLayout(false);
+            this.panelChocolatrasDrawer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -135,6 +184,9 @@
         private System.Windows.Forms.Panel panelWebBrowserContainer;
         private MaterialSkin.Controls.MaterialRaisedButton btnBrowserCancel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panelChocolatrasDrawer;
+        private MaterialSkin.Controls.MaterialRaisedButton btnToggleDrawer;
+        private System.Windows.Forms.Panel panelChocolatrasContainer;
+        private System.Windows.Forms.Label label1;
     }
 }

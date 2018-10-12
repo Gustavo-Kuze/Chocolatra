@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGithub = new MaterialSkin.Controls.MaterialFlatButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +103,18 @@
             this.btnGithub.UseVisualStyleBackColor = true;
             this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.ForeColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(1, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(702, 539);
+            this.panel1.TabIndex = 4;
+            // 
             // FrmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +125,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "FrmAbout";
             this.Sizable = false;
@@ -131,5 +145,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialFlatButton btnGithub;
+        private System.Windows.Forms.Panel panel1;
     }
 }
