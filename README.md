@@ -1,6 +1,8 @@
 <img src="https://github.com/Gustavo-Kuze/Chocolatra/blob/master/Chocolatra/assets/chocolatra_icon.png" width="25%" />
 <h6>Instruções em Português no final da página!</h6>
-____
+
+_________
+
 <h5>EN-US</h5>
 <h1>Welcome to Chocolatra</h1>
 
@@ -63,10 +65,10 @@ Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e col
 
 <h2>Instalando, atualizando e removendo pacotes</h2>
 
-1. First of all, You need to add your packages to the automation row. There are a few ways You can do It:
-* You can type the package name on the text field, and press enter or click the add button;
+1. Primeiramente, você precisa adicionar os pacotes à fila de automação. Existem algumas formas de fazer isso:
+* Você pode digitar o nome do pacote na caixa de texto e pressionar enter ou clicar no botão "ADD";
 
-* You can look for installed packages by clicking the "add installed packages" button, which will Choco search in your system for Chocolatey programs;
+* Você pode procurar pode pacotes instalados ao clicar em "add installed packages", o que fará uma busca por pacotes Chocolatey instalados préviamente em seu sistema;
 
 * Or You can get packages directly from the website by clicking in "Online search". When You do so, a new integrated webbrowser window will open up with the a customized version of Chocolatey Website. You can simply click on the "Add to Chocolatra" buttons to add the packages to the list on your left. You can click the list item to remove It too. When You close the browser, all selected packages will be added to the automation row.
 
