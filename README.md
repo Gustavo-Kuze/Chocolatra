@@ -81,6 +81,6 @@ Toda vez que o Chocolatra é aberto, ele cria um arquivo "packages" caso o mesmo
 Então, caso você queira mover o Chocolatra para outro diretório e manter os arquivos salvos, você deve mover o arquivo packages junto com o executável principal e o arquivo MaterialSkin.dll!
 
 
-<h4>The future</h4>
-I have plans to add a translation engine to the program, so people can add their own and help me out with that, but please note that I'm the only developer of this tool so far and I don't have much time, so It will take a while until this project is mature enough to become as BIG as I want!
+<h4>O futuro</h4>
+Tenho planos para adicionar um motor de tradução ao programa, para que o pessoal possa criar suas próprias e me ajudar com isso, mas por favor note que sou o único desenvolvedor dessa ferramenta até o momento e não tenho muito tempo, então vai levar um tempo até que o projeto se torne maduro o suficiente.
 
