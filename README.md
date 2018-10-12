@@ -7,10 +7,13 @@ I'm currently working on the code, so there's no documentation Yet. However, You
 </p>
 
 <h1>Installation</h1>
-Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry. You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for download and installing automatically.
+Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for download and installing automatically.
 
-If You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
+Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 ```
+<h1>Usage</h1>
+
+TODO...
