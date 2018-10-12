@@ -28,3 +28,7 @@ Or if You would prefer to install It manually, simply run cmd as administrator a
 2. Now You have to check all packages that You want to manipulate, and choose an Action, like "Install Packages" for example. The packages Will suffer the Action sequentially, showing You the progress during Its execution.
 
 3. That's It!
+
+<h2>The packages file</h2>
+Everytime Chocolatra is open, It will create a "packages" file if not found. This file is a pretty lazy Database for your saved packages.
+So, if You want to move Chocolatra to another directory and You want to keep the packages saved, You need to move the packages file along with the main executable and the MaterialSkin.dll!
