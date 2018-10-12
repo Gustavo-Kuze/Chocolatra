@@ -72,13 +72,13 @@ Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e col
 
 * Ou você pode pegar os pacotes diretamente pelo site ao clicar em "Online search". Quando fizer isso, uma nova janela com um navegador integrado se abrirá com uma versão customizada do site do Chocolatey. Você pode então clicar nos botões "Add to Chocolatra"para adicionar os pacotes à lista na esquerda. Você pode remover os itens da lista ao clicar neles.Quando fechar o navegador, os pacotes serão adicionados à fila de automação.
 
-2. Now You have to check all packages that You want to manipulate, and choose an Action, like "Install Packages" for example. The packages Will suffer the Action sequentially, showing You the progress during Its execution.
+2. Agora você deve marcar todos os pacotes que deseja manipular, e escolher uma Action, como "Install Packages" por exemplo. Os pacotes sofrerão a Action sequencialmente, mostrando todo o progresso durante sua execução.
 
-3. That's It!
+3. Pronto!
 
-<h2>The packages file</h2>
-Everytime Chocolatra is open, It will create a "packages" file if not found. This file is a pretty lazy Database for your saved packages.
-So, if You want to move Chocolatra to another directory and You want to keep the packages saved, You need to move the packages file along with the main executable and the MaterialSkin.dll!
+<h2>O arquivo packages</h2>
+Toda vez que o Chocolatra é aberto, ele cria um arquivo "packages" caso o mesmo não exista. Este arquivo é um banco de dados simples para guardar os pacotes Chocolatey adicionados à fila de automação.
+Então, caso você queira mover o Chocolatra para outro diretório e manter os arquivos salvos, você deve mover o arquivo packages junto com o executável principal e o arquivo MaterialSkin.dll!
 
 
 <h4>The future</h4>
