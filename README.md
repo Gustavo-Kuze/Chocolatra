@@ -49,6 +49,12 @@ Version 1.6 brings You the new Language Translator engine! Let's see how to set 
 
 NOTE: Since version 1.6, the program will automatically generate an English lang_dict.json file inside Its execution directory. You can use that file to translate to your own language and send It to me, if You want others to enjoy globalized texts as well.
 
+
+## Credits
+
+* The credits for the forms styling goes to the <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a> project;
+* The credits for the json parsing used on the translator engine goes to the <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a> project;
+
 ____
 
 <h5>PT-BR</h5>
@@ -97,3 +103,8 @@ A versão 1.6 traz para você o novo motor de tradução! Vamos ver como configu
 3. Feito!
 
 NOTA: Desde a versão 1.6, o programa irá gerar automaticamente um arquivo lang_dict.json em seu diretório de execução. Você pode usar esse arquivo para traduzir para o seu próprio idioma e enviá-lo para mim, se quiser que outros também aproveitem os textos globalizados.
+
+## Créditos
+
+* Os créditos pela estilização dos formulários vão para o projeto <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a>;
+* Os créditos pela conversão Json usada no motor de tradução vão para o projeto <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a>;
