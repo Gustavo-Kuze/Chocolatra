@@ -38,6 +38,17 @@ Or if You would prefer to install It manually, simply run cmd as administrator a
 Everytime Chocolatra is open, It will create a "packages" file if not found. This file is a pretty lazy Database for your saved packages.
 So, if You want to move Chocolatra to another directory and You want to keep the packages saved, You need to move the packages file along with the main executable and the MaterialSkin.dll!
 
+<h2>Translation</h2>
+Version 1.6 brings You the new Language Translator engine! Let's see how to set the program to show pt-br (Brazilian Portuguese) strings.
+
+1. Download the language file from <i>here</i>;
+
+2. Put the file inside the same folder as Chocolatra.exe is contained;
+
+3. Done!
+
+NOTE: Since version 1.6, the program will automatically generate an English lang_dict.json file inside Its execution directory. You can use that file to translate to your own language and send It to me, if You want others to enjoy globalized texts as well.
+
 ____
 
 <h5>PT-BR</h5>
@@ -75,3 +86,14 @@ Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e col
 <h2>O arquivo packages</h2>
 Toda vez que o Chocolatra é aberto, ele cria um arquivo "packages" caso o mesmo não exista. Este arquivo é um banco de dados simples para guardar os pacotes Chocolatey adicionados à fila de automação.
 Então, caso você queira mover o Chocolatra para outro diretório e manter os arquivos salvos, você deve mover o arquivo packages junto com o executável principal e o arquivo MaterialSkin.dll!
+
+<h2>Tradução</h2>
+A versão 1.6 traz para você o novo motor de tradução! Vamos ver como configurar o programa para mostrar as strings em pt-br (Português Brasileiro).
+
+1. Baixe o arquivo de idioma <i>daqui</i>;
+
+2. Coloque o arquivo dentro da mesma pasta que o Chocolatra.exe está contido;
+
+3. Feito!
+
+NOTA: Desde a versão 1.6, o programa irá gerar automaticamente um arquivo lang_dict.json em seu diretório de execução. Você pode usar esse arquivo para traduzir para o seu próprio idioma e enviá-lo para mim, se quiser que outros também aproveitem os textos globalizados.
