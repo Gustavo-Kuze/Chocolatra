@@ -1,12 +1,13 @@
 <img src="https://github.com/Gustavo-Kuze/Chocolatra/blob/master/Chocolatra/assets/chocolatra_icon.png" width="25%" />
-<h6>Instruções em Português no final da página!</h6>
+<h6>An automating tool for <a href="https://chocolatey.org/" target="_blank">Chocolatey</a> scripts</h6>
+<h6>Uma ferramenta de automação para scripts <a href="https://chocolatey.org/" target="_blank">Chocolatey</a></h6>
 
 _________
 
 <h5>EN-US</h5>
 <h1>Welcome to Chocolatra</h1>
 
-<h2>An automating tool for <a href="https://chocolatey.org/" target="_blank">Chocolatey</a> scripts</h2>
+
 
 
 <h1>Installation</h1>
@@ -61,7 +62,6 @@ ____
 
 <h1>Bem-vindo ao Chocolatra</h1>
 
-<h2>Uma ferramenta de automação para scripts <a href="https://chocolatey.org/" target="_blank">Chocolatey</a></h2>
 
 <h1>Instalação</h1>
 • Baixe a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a> antes de mais nada!
