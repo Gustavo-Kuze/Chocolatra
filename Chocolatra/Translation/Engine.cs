@@ -57,7 +57,18 @@ namespace Chocolatra.Translation
                 {"frmabouttitle", "Chocolatra - About"},
                 {"frmaboutdescription", "Chocolatra is an automation tool for installing, upgrading and uninstalling Chocolatey packages."},
                 {"btngithub", "See more on Github"},
-                {"lblby", "Developed by Gustavo Kuze da Silva"}
+                {"lblby", "Developed by Gustavo Kuze da Silva"},
+                {"ttlistbox", "The saved packages will be displayed here"},
+                {"ttbtnadd", "Adds the typed package to the automation row"},
+                {"ttbtnremove", "Removes the checked packages from the automation row"},
+                {"ttbtnaddinstalled", "If You already have any Chocolatey packages installed, You can add them to the automation row by clicking here"},
+                {"ttbtnonline", "Open the integrated Web browser to navigate through the online list of packages"},
+                {"ttbtninstall", "It will install all checked packages from the automation row"},
+                {"ttbtnupdate", "It will upgrade all checked packages from the automation row"},
+                {"ttbtnuninstall", "It will uninstall all checked packages from the automation row"},
+                {"ttbtninstallchoco", "Run the powershell script to download and install Chocolatey if You haven't done It yet. NOTE: This program will not work without Chocolatey installed on your computer."},
+                {"ttchkforcedependencies", "When Installing, this adds --force and --force-dependencies commandline arguments to choco. When Uninstalling this adds --remove-dependencies  to choco."},
+                {"ttchkshowconsole", "If checked, the command prompt (terminal) will be displayed to You while running the Choco commands(Installing, upgrading, Uninstalling)."}
             };
 
             string json = JsonConvert.SerializeObject(Lines, Formatting.Indented);

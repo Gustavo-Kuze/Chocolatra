@@ -127,7 +127,7 @@
             this.chkCheckAll.AutoSize = true;
             this.chkCheckAll.Depth = 0;
             this.chkCheckAll.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkCheckAll.Location = new System.Drawing.Point(40, 39);
+            this.chkCheckAll.Location = new System.Drawing.Point(16, 39);
             this.chkCheckAll.Margin = new System.Windows.Forms.Padding(0);
             this.chkCheckAll.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkCheckAll.MouseState = MaterialSkin.MouseState.HOVER;
@@ -146,9 +146,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelListBoxContainer.AutoScroll = true;
             this.panelListBoxContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelListBoxContainer.Location = new System.Drawing.Point(40, 70);
+            this.panelListBoxContainer.Location = new System.Drawing.Point(8, 70);
             this.panelListBoxContainer.Name = "panelListBoxContainer";
-            this.panelListBoxContainer.Size = new System.Drawing.Size(443, 195);
+            this.panelListBoxContainer.Size = new System.Drawing.Size(475, 195);
             this.panelListBoxContainer.TabIndex = 2;
             this.toolTip.SetToolTip(this.panelListBoxContainer, "The saved packages will be displayed here");
             // 
@@ -164,7 +164,7 @@
             this.txtAddCommand.SelectedText = "";
             this.txtAddCommand.SelectionLength = 0;
             this.txtAddCommand.SelectionStart = 0;
-            this.txtAddCommand.Size = new System.Drawing.Size(251, 23);
+            this.txtAddCommand.Size = new System.Drawing.Size(297, 23);
             this.txtAddCommand.TabIndex = 3;
             this.txtAddCommand.UseSystemPasswordChar = false;
             this.txtAddCommand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAddCommand_KeyUp);
@@ -193,7 +193,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(443, 28);
+            this.btnAdd.Location = new System.Drawing.Point(497, 33);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
@@ -211,7 +211,7 @@
             this.btnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRemove.Depth = 0;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(528, 28);
+            this.btnRemove.Location = new System.Drawing.Point(497, 81);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRemove.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRemove.Name = "btnRemove";

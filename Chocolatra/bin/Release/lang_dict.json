@@ -36,5 +36,16 @@
   "frmabouttitle": "Chocolatra - Sobre",
   "frmaboutdescription": "Chocolatra é uma ferramenta de automação para instalar, atualizar e desinstalar pacotes Chocolatey.",
   "btngithub": "Saiba mais no Github",
-  "lblby": "Desenvolvido por Gustavo Kuze da Silva"
+  "lblby": "Desenvolvido por Gustavo Kuze da Silva",
+  "ttlistbox": "Os pacotes salvos serão mostrados aqui",
+  "ttbtnadd": "Adiciona o pacote digitado à fila de automação",
+  "ttbtnremove": "Remove os pacotes marcados da fila de automação",
+  "ttbtnaddinstalled": "Se você já tem algum pacote Chocolatey instalado, você pode adicioná-los à fila de automação clicando aqui",
+  "ttbtnonline": "Abre o navegador integrado e navegue pela lista de pacotes online",
+  "ttbtninstall": "Irá instalar os pacotes marcados na fila de automação",
+  "ttbtnupdate": "Irá atualizar os pacotes marcados na fila de automação",
+  "ttbtnuninstall": "Irá desinstalar os pacotes marcados na fila de automação",
+  "ttbtninstallchoco": "Roda o script powershell para baixar e instalar o Chocolatey caso você ainda não o tenha feito. NOTA: Este programa não irá funcionar sem o Chocolatey instalado em seu computador.",
+  "ttchkforcedependencies": "Ao instalar, adiciona os argumentos de linha de comando --force and --force-dependencies ao choco. Ao desinstalar, adiciona --remove-dependencies ao choco.",
+  "ttchkshowconsole": "Caso marcado, mostra o prompt de comando (terminal) durante a execução dos comandos (Instalar, atualizar, desinstalar)."
 }

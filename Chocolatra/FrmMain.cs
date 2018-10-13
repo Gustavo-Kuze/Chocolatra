@@ -44,7 +44,17 @@ namespace Chocolatra
             chkForceDependencies.Text = lines["chkforcedependencies"];
             lblMore.Text = lines["lblmore"];
             chkShowConsole.Text = lines["chkshowconsole"];
-
+            toolTip.SetToolTip(panelListBoxContainer, lines["ttlistbox"]);
+            toolTip.SetToolTip(btnAdd, lines["ttbtnadd"]);
+            toolTip.SetToolTip(btnRemove, lines["ttbtnremove"]);
+            toolTip.SetToolTip(btnAddInstalledPackages, lines["ttbtnaddinstalled"]);
+            toolTip.SetToolTip(btnOnlineSearch, lines["ttbtnonline"]);
+            toolTip.SetToolTip(btnInstallPackages, lines["ttbtninstall"]);
+            toolTip.SetToolTip(btnUpdatePackages, lines["ttbtnupdate"]);
+            toolTip.SetToolTip(btnUninstallPackages, lines["ttbtnuninstall"]);
+            toolTip.SetToolTip(btnInstallChoco, lines["ttbtninstallchoco"]);
+            toolTip.SetToolTip(chkForceDependencies, lines["ttchkforcedependencies"]);
+            toolTip.SetToolTip(chkShowConsole, lines["ttchkshowconsole"]);
         }
 
         private async void btnAddInstalledPackages_Click(object sender, EventArgs e)
