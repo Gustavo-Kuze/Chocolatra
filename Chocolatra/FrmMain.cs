@@ -65,7 +65,7 @@ namespace Chocolatra
             task.Start();
             await task;
         }
-        
+
         private void btnAbout_Click(object sender, EventArgs e)
         {
             FrmAbout about = new FrmAbout();
@@ -109,8 +109,8 @@ namespace Chocolatra
                 }
             }
         }
-        
-        
+
+
         private void btnOpenSite_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["FrmBrowser"] == null)
@@ -161,6 +161,11 @@ namespace Chocolatra
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\chocolatey"))
+            {
+                MessageBox.Show(Translation.Engine.Lines["mboxchocolateynotinstalledtext"], Translation.Engine.Lines["mboxchocolateynotinstalledtitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             if (!Utils.Internet.IsActive())
             {
                 QuickLog(Translation.Engine.Lines["quicklognoconnection"]);
@@ -174,7 +179,7 @@ namespace Chocolatra
             ChangeCheckAll();
         }
 
-       
+
 
         private void StartChocoWithPrgss(string command, string logMessage)
         {
@@ -198,23 +203,23 @@ namespace Chocolatra
 
                 Choco.RunChoco(box, command, chkShowConsole.Checked);
                 ++currentIndex;
-            }); 
+            });
             Invoke(new MethodInvoker(() =>
             {
                 prgProgress.Visible = false;
                 lblProgress.Visible = false;
             }));
 
-            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons});
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons });
         }
 
 
         private async void btnInstallPackages_Click(object sender, EventArgs e)
         {
-            if (isAnyPackageSelected()) 
+            if (isAnyPackageSelected())
             {
-                string forceDependencies = (chkForceDependencies.Checked)? " --force --force-dependencies ":"";
-                Task tsk = new Task(() => { StartChocoWithPrgss("install"+forceDependencies, "Installing package"); });
+                string forceDependencies = (chkForceDependencies.Checked) ? " --force --force-dependencies " : "";
+                Task tsk = new Task(() => { StartChocoWithPrgss("install" + forceDependencies, "Installing package"); });
                 tsk.Start();
                 await tsk;
 
@@ -244,7 +249,7 @@ namespace Chocolatra
             if (isAnyPackageSelected())
             {
                 string removeDependencies = (chkForceDependencies.Checked) ? " --remove-dependencies " : "";
-                Task tsk = new Task(() => { StartChocoWithPrgss("uninstall"+removeDependencies, "Uninstalling package"); });
+                Task tsk = new Task(() => { StartChocoWithPrgss("uninstall" + removeDependencies, "Uninstalling package"); });
                 tsk.Start();
                 await tsk;
             }
@@ -253,7 +258,7 @@ namespace Chocolatra
                 noPackagesSelectedMsg();
             }
         }
-        
+
         private void noPackagesSelectedMsg()
         {
             MessageBox.Show(Translation.Engine.Lines["mboxnopackagesselectedtext"], Translation.Engine.Lines["mboxnopackagesselectedtitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -266,7 +271,7 @@ namespace Chocolatra
                 btnAdd.PerformClick();
             }
         }
-        
+
         /// <summary>
         /// Changes the checked state of all checkboxes inside panelListBoxContainer
         /// </summary>

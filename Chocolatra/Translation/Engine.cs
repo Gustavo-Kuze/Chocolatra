@@ -12,7 +12,7 @@ namespace Chocolatra.Translation
     internal class Engine
     {
         public static Dictionary<string, string> Lines { get; set; }
-        
+
         public static void create()
         {
             /*
@@ -67,8 +67,10 @@ namespace Chocolatra.Translation
                 {"ttbtnupdate", "It will upgrade all checked packages from the automation row"},
                 {"ttbtnuninstall", "It will uninstall all checked packages from the automation row"},
                 {"ttbtninstallchoco", "Run the powershell script to download and install Chocolatey if You haven't done It yet. NOTE: This program will not work without Chocolatey installed on your computer."},
-                {"ttchkforcedependencies", "When Installing, this adds --force and --force-dependencies commandline arguments to choco. When Uninstalling this adds --remove-dependencies  to choco."},
-                {"ttchkshowconsole", "If checked, the command prompt (terminal) will be displayed to You while running the Choco commands(Installing, upgrading, Uninstalling)."}
+                {"ttchkforcedependencies", "When Installing, this adds --force and --force-dependencies commandline arguments to choco command. When Uninstalling this adds --remove-dependencies to choco command."},
+                {"ttchkshowconsole", "If checked, the command prompt (terminal) will be displayed to You while running the Choco commands(Installing, upgrading, Uninstalling)."},
+                { "mboxchocolateynotinstalledtext", "Chocolatey is not installed on your system, please click on \"Install Chocolatey\" before anything else! Chocolatra does not work without Chocolatey."},
+                { "mboxchocolateynotinstalledtitle", "Chocolatey not found"}
             };
 
             string json = JsonConvert.SerializeObject(Lines, Formatting.Indented);
@@ -78,7 +80,7 @@ namespace Chocolatra.Translation
 
         public static Dictionary<string, string> load()
         {
-            if(!File.Exists(Application.StartupPath + "\\lang_dict.json"))
+            if (!File.Exists(Application.StartupPath + "\\lang_dict.json"))
             {
                 create();
             }

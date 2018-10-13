@@ -46,6 +46,8 @@
   "ttbtnupdate": "Irá atualizar os pacotes marcados na fila de automação",
   "ttbtnuninstall": "Irá desinstalar os pacotes marcados na fila de automação",
   "ttbtninstallchoco": "Roda o script powershell para baixar e instalar o Chocolatey caso você ainda não o tenha feito. NOTA: Este programa não irá funcionar sem o Chocolatey instalado em seu computador.",
-  "ttchkforcedependencies": "Ao instalar, adiciona os argumentos de linha de comando --force and --force-dependencies ao choco. Ao desinstalar, adiciona --remove-dependencies ao choco.",
-  "ttchkshowconsole": "Caso marcado, mostra o prompt de comando (terminal) durante a execução dos comandos (Instalar, atualizar, desinstalar)."
+  "ttchkforcedependencies": "Ao instalar, adiciona os argumentos de linha de comando --force and --force-dependencies ao comando choco. Ao desinstalar, adiciona --remove-dependencies ao comando choco.",
+  "ttchkshowconsole": "Caso marcado, mostra o prompt de comando (terminal) durante a execução dos comandos (Instalar, atualizar, desinstalar).",
+  "mboxchocolateynotinstalledtext": "Chocolatey não está instalado em seu sistema, por favor clique em \"Instalar Chocolatey\" antes de mais nada! O Chocolatra não funciona sem o Chocolatey.",
+  "mboxchocolateynotinstalledtitle": "Chocolatey não encontrado"
 }
