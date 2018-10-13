@@ -10,11 +10,11 @@ _________
 
 
 <h1>Installation</h1>
-Download the latest <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">release</a> before anything else!
+• Download the latest <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">release</a> before anything else!
 
-Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
+• Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
 
-Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
+• Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
@@ -62,12 +62,13 @@ ____
 <h1>Bem-vindo ao Chocolatra</h1>
 
 <h2>Uma ferramenta de automação para scripts <a href="https://chocolatey.org/" target="_blank">Chocolatey</a></h2>
-Baixe a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a> antes de mais nada!
 
 <h1>Instalação</h1>
-O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
+• Baixe a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a> antes de mais nada!
 
-Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e cole o seguinte script:
+• O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
+
+• Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e cole o seguinte script:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
