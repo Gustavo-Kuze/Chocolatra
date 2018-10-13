@@ -33,16 +33,16 @@
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblQuickLog = new System.Windows.Forms.Label();
-            this.lblInstalledMsg = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAutomationRow = new MaterialSkin.Controls.MaterialLabel();
             this.chkCheckAll = new MaterialSkin.Controls.MaterialCheckBox();
             this.panelListBoxContainer = new System.Windows.Forms.Panel();
             this.txtAddCommand = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnAddInstalledPackages = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnRemove = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnOpenSite = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnOnlineSearch = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblActions = new MaterialSkin.Controls.MaterialLabel();
             this.prgProgress = new System.Windows.Forms.ProgressBar();
             this.lblProgress = new MaterialSkin.Controls.MaterialLabel();
             this.panelActionButtons = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAbout = new MaterialSkin.Controls.MaterialRaisedButton();
             this.chkShowConsole = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblMore = new MaterialSkin.Controls.MaterialLabel();
             this.panelChocolateyButtons = new System.Windows.Forms.Panel();
             this.btnInstallChoco = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnUninstallChocolatey = new MaterialSkin.Controls.MaterialFlatButton();
@@ -84,14 +84,14 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblQuickLog);
-            this.panel1.Controls.Add(this.lblInstalledMsg);
+            this.panel1.Controls.Add(this.lblAutomationRow);
             this.panel1.Controls.Add(this.chkCheckAll);
             this.panel1.Controls.Add(this.panelListBoxContainer);
             this.panel1.Controls.Add(this.txtAddCommand);
             this.panel1.Controls.Add(this.btnAddInstalledPackages);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnRemove);
-            this.panel1.Controls.Add(this.btnOpenSite);
+            this.panel1.Controls.Add(this.btnOnlineSearch);
             this.panel1.Location = new System.Drawing.Point(7, 7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(743, 283);
@@ -109,25 +109,25 @@
             this.lblQuickLog.Text = "...";
             this.lblQuickLog.Visible = false;
             // 
-            // lblInstalledMsg
+            // lblAutomationRow
             // 
-            this.lblInstalledMsg.AutoSize = true;
-            this.lblInstalledMsg.Depth = 0;
-            this.lblInstalledMsg.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblInstalledMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblInstalledMsg.Location = new System.Drawing.Point(4, 5);
-            this.lblInstalledMsg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblInstalledMsg.Name = "lblInstalledMsg";
-            this.lblInstalledMsg.Size = new System.Drawing.Size(117, 19);
-            this.lblInstalledMsg.TabIndex = 0;
-            this.lblInstalledMsg.Text = "Automation row";
+            this.lblAutomationRow.AutoSize = true;
+            this.lblAutomationRow.Depth = 0;
+            this.lblAutomationRow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAutomationRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAutomationRow.Location = new System.Drawing.Point(4, 5);
+            this.lblAutomationRow.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAutomationRow.Name = "lblAutomationRow";
+            this.lblAutomationRow.Size = new System.Drawing.Size(117, 19);
+            this.lblAutomationRow.TabIndex = 0;
+            this.lblAutomationRow.Text = "Automation row";
             // 
             // chkCheckAll
             // 
             this.chkCheckAll.AutoSize = true;
             this.chkCheckAll.Depth = 0;
             this.chkCheckAll.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkCheckAll.Location = new System.Drawing.Point(49, 37);
+            this.chkCheckAll.Location = new System.Drawing.Point(16, 39);
             this.chkCheckAll.Margin = new System.Windows.Forms.Padding(0);
             this.chkCheckAll.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkCheckAll.MouseState = MaterialSkin.MouseState.HOVER;
@@ -146,24 +146,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelListBoxContainer.AutoScroll = true;
             this.panelListBoxContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelListBoxContainer.Location = new System.Drawing.Point(40, 70);
+            this.panelListBoxContainer.Location = new System.Drawing.Point(8, 70);
             this.panelListBoxContainer.Name = "panelListBoxContainer";
-            this.panelListBoxContainer.Size = new System.Drawing.Size(382, 195);
+            this.panelListBoxContainer.Size = new System.Drawing.Size(475, 195);
             this.panelListBoxContainer.TabIndex = 2;
             this.toolTip.SetToolTip(this.panelListBoxContainer, "The saved packages will be displayed here");
             // 
             // txtAddCommand
             // 
+            this.txtAddCommand.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtAddCommand.Depth = 0;
             this.txtAddCommand.Hint = "Chocolatey package name to add";
-            this.txtAddCommand.Location = new System.Drawing.Point(440, 77);
+            this.txtAddCommand.Location = new System.Drawing.Point(186, 41);
             this.txtAddCommand.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtAddCommand.Name = "txtAddCommand";
             this.txtAddCommand.PasswordChar = '\0';
             this.txtAddCommand.SelectedText = "";
             this.txtAddCommand.SelectionLength = 0;
             this.txtAddCommand.SelectionStart = 0;
-            this.txtAddCommand.Size = new System.Drawing.Size(251, 23);
+            this.txtAddCommand.Size = new System.Drawing.Size(297, 23);
             this.txtAddCommand.TabIndex = 3;
             this.txtAddCommand.UseSystemPasswordChar = false;
             this.txtAddCommand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAddCommand_KeyUp);
@@ -173,7 +174,7 @@
             this.btnAddInstalledPackages.AutoSize = true;
             this.btnAddInstalledPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAddInstalledPackages.Depth = 0;
-            this.btnAddInstalledPackages.Location = new System.Drawing.Point(465, 181);
+            this.btnAddInstalledPackages.Location = new System.Drawing.Point(497, 181);
             this.btnAddInstalledPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddInstalledPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddInstalledPackages.Name = "btnAddInstalledPackages";
@@ -192,7 +193,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(698, 70);
+            this.btnAdd.Location = new System.Drawing.Point(497, 33);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
@@ -210,7 +211,7 @@
             this.btnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRemove.Depth = 0;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(518, 109);
+            this.btnRemove.Location = new System.Drawing.Point(497, 81);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRemove.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRemove.Name = "btnRemove";
@@ -222,28 +223,28 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnOpenSite
+            // btnOnlineSearch
             // 
-            this.btnOpenSite.AutoSize = true;
-            this.btnOpenSite.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnOpenSite.Depth = 0;
-            this.btnOpenSite.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenSite.Location = new System.Drawing.Point(527, 229);
-            this.btnOpenSite.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnOpenSite.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnOpenSite.Name = "btnOpenSite";
-            this.btnOpenSite.Primary = false;
-            this.btnOpenSite.Size = new System.Drawing.Size(116, 36);
-            this.btnOpenSite.TabIndex = 6;
-            this.btnOpenSite.Text = "Online search";
-            this.toolTip.SetToolTip(this.btnOpenSite, "Open the integrated Web browser to navigate through the online list of packages");
-            this.btnOpenSite.UseVisualStyleBackColor = true;
-            this.btnOpenSite.Click += new System.EventHandler(this.btnOpenSite_Click);
+            this.btnOnlineSearch.AutoSize = true;
+            this.btnOnlineSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOnlineSearch.Depth = 0;
+            this.btnOnlineSearch.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOnlineSearch.Location = new System.Drawing.Point(497, 229);
+            this.btnOnlineSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnOnlineSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnOnlineSearch.Name = "btnOnlineSearch";
+            this.btnOnlineSearch.Primary = false;
+            this.btnOnlineSearch.Size = new System.Drawing.Size(116, 36);
+            this.btnOnlineSearch.TabIndex = 6;
+            this.btnOnlineSearch.Text = "Online search";
+            this.toolTip.SetToolTip(this.btnOnlineSearch, "Open the integrated Web browser to navigate through the online list of packages");
+            this.btnOnlineSearch.UseVisualStyleBackColor = true;
+            this.btnOnlineSearch.Click += new System.EventHandler(this.btnOpenSite_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.materialLabel1);
+            this.panel2.Controls.Add(this.lblActions);
             this.panel2.Controls.Add(this.prgProgress);
             this.panel2.Controls.Add(this.lblProgress);
             this.panel2.Controls.Add(this.panelActionButtons);
@@ -252,18 +253,18 @@
             this.panel2.Size = new System.Drawing.Size(743, 173);
             this.panel2.TabIndex = 16;
             // 
-            // materialLabel1
+            // lblActions
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(4, 3);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(61, 19);
-            this.materialLabel1.TabIndex = 10;
-            this.materialLabel1.Text = "Actions";
+            this.lblActions.AutoSize = true;
+            this.lblActions.Depth = 0;
+            this.lblActions.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblActions.Location = new System.Drawing.Point(4, 3);
+            this.lblActions.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblActions.Name = "lblActions";
+            this.lblActions.Size = new System.Drawing.Size(61, 19);
+            this.lblActions.TabIndex = 10;
+            this.lblActions.Text = "Actions";
             // 
             // prgProgress
             // 
@@ -341,7 +342,7 @@
             this.btnUpdatePackages.AutoSize = true;
             this.btnUpdatePackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdatePackages.Depth = 0;
-            this.btnUpdatePackages.Location = new System.Drawing.Point(167, 15);
+            this.btnUpdatePackages.Location = new System.Drawing.Point(237, 15);
             this.btnUpdatePackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUpdatePackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdatePackages.Name = "btnUpdatePackages";
@@ -358,7 +359,7 @@
             this.btnUninstallPackages.AutoSize = true;
             this.btnUninstallPackages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUninstallPackages.Depth = 0;
-            this.btnUninstallPackages.Location = new System.Drawing.Point(322, 15);
+            this.btnUninstallPackages.Location = new System.Drawing.Point(457, 15);
             this.btnUninstallPackages.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnUninstallPackages.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUninstallPackages.Name = "btnUninstallPackages";
@@ -375,7 +376,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnAbout);
             this.panel3.Controls.Add(this.chkShowConsole);
-            this.panel3.Controls.Add(this.materialLabel2);
+            this.panel3.Controls.Add(this.lblMore);
             this.panel3.Controls.Add(this.panelChocolateyButtons);
             this.panel3.Location = new System.Drawing.Point(7, 475);
             this.panel3.Name = "panel3";
@@ -385,7 +386,7 @@
             // btnAbout
             // 
             this.btnAbout.Depth = 0;
-            this.btnAbout.Location = new System.Drawing.Point(671, 14);
+            this.btnAbout.Location = new System.Drawing.Point(692, 13);
             this.btnAbout.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Primary = true;
@@ -402,7 +403,7 @@
             this.chkShowConsole.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkShowConsole.Depth = 0;
             this.chkShowConsole.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chkShowConsole.Location = new System.Drawing.Point(443, 10);
+            this.chkShowConsole.Location = new System.Drawing.Point(431, 10);
             this.chkShowConsole.Margin = new System.Windows.Forms.Padding(0);
             this.chkShowConsole.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkShowConsole.MouseState = MaterialSkin.MouseState.HOVER;
@@ -415,18 +416,18 @@
         " the Choco commands (Installing, upgrading, Uninstalling).");
             this.chkShowConsole.UseVisualStyleBackColor = true;
             // 
-            // materialLabel2
+            // lblMore
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(4, 1);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(44, 19);
-            this.materialLabel2.TabIndex = 12;
-            this.materialLabel2.Text = "More";
+            this.lblMore.AutoSize = true;
+            this.lblMore.Depth = 0;
+            this.lblMore.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMore.Location = new System.Drawing.Point(4, 1);
+            this.lblMore.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMore.Name = "lblMore";
+            this.lblMore.Size = new System.Drawing.Size(44, 19);
+            this.lblMore.TabIndex = 12;
+            this.lblMore.Text = "More";
             // 
             // panelChocolateyButtons
             // 
@@ -520,15 +521,15 @@
         private MaterialSkin.Controls.MaterialFlatButton btnAdd;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtAddCommand;
         private MaterialSkin.Controls.MaterialFlatButton btnInstallChoco;
-        private MaterialSkin.Controls.MaterialFlatButton btnOpenSite;
-        private MaterialSkin.Controls.MaterialLabel lblInstalledMsg;
+        private MaterialSkin.Controls.MaterialFlatButton btnOnlineSearch;
+        private MaterialSkin.Controls.MaterialLabel lblAutomationRow;
         private MaterialSkin.Controls.MaterialLabel lblProgress;
         private System.Windows.Forms.ProgressBar prgProgress;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblActions;
         private MaterialSkin.Controls.MaterialFlatButton btnUninstallPackages;
         private MaterialSkin.Controls.MaterialFlatButton btnUpdatePackages;
         private MaterialSkin.Controls.MaterialFlatButton btnInstallPackages;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel lblMore;
         private MaterialSkin.Controls.MaterialCheckBox chkShowConsole;
         private System.Windows.Forms.Label lblQuickLog;
         private System.Windows.Forms.ToolTip toolTip;

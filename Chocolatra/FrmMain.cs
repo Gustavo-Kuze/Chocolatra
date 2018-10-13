@@ -20,16 +20,52 @@ namespace Chocolatra
             Gui = new Utils.GUI(this);
             InitializeComponent();
             setMaterialThemeColors();
+            Translation.Engine.load();
+            TranslateForm();
         }
-        
+
+        private void TranslateForm()
+        {
+            var lines = Translation.Engine.Lines;
+            Text = lines["frmmaintitle"];
+            lblAutomationRow.Text = lines["lblautomationrow"];
+            chkCheckAll.Text = lines["chkcheckall"];
+            txtAddCommand.Hint = lines["txtaddcommandhint"];
+            btnAdd.Text = lines["btnadd"];
+            btnRemove.Text = lines["btnremoveselected"];
+            btnAddInstalledPackages.Text = lines["btnaddinstalled"];
+            btnOnlineSearch.Text = lines["btnonlinesearch"];
+            lblActions.Text = lines["lblactions"];
+            btnInstallChoco.Text = lines["btninstallchoco"];
+            btnUninstallChocolatey.Text = lines["btnuninstallchoco"];
+            btnInstallPackages.Text = lines["btninstall"];
+            btnUninstallPackages.Text = lines["btnuninstall"];
+            btnUpdatePackages.Text = lines["btnupgrade"];
+            chkForceDependencies.Text = lines["chkforcedependencies"];
+            lblMore.Text = lines["lblmore"];
+            chkShowConsole.Text = lines["chkshowconsole"];
+            toolTip.SetToolTip(panelListBoxContainer, lines["ttlistbox"]);
+            toolTip.SetToolTip(btnAdd, lines["ttbtnadd"]);
+            toolTip.SetToolTip(btnRemove, lines["ttbtnremove"]);
+            toolTip.SetToolTip(btnAddInstalledPackages, lines["ttbtnaddinstalled"]);
+            toolTip.SetToolTip(btnOnlineSearch, lines["ttbtnonline"]);
+            toolTip.SetToolTip(btnInstallPackages, lines["ttbtninstall"]);
+            toolTip.SetToolTip(btnUpdatePackages, lines["ttbtnupdate"]);
+            toolTip.SetToolTip(btnUninstallPackages, lines["ttbtnuninstall"]);
+            toolTip.SetToolTip(btnInstallChoco, lines["ttbtninstallchoco"]);
+            toolTip.SetToolTip(chkForceDependencies, lines["ttchkforcedependencies"]);
+            toolTip.SetToolTip(chkShowConsole, lines["ttchkshowconsole"]);
+        }
+
         private async void btnAddInstalledPackages_Click(object sender, EventArgs e)
         {
-            QuickLog("Searching for packages, please wait...");
+            //QuickLog("Searching for packages, please wait...");
+            QuickLog(Translation.Engine.Lines["pleasewait"]);
             Task task = new Task(addInstalledToList);
             task.Start();
             await task;
         }
-        
+
         private void btnAbout_Click(object sender, EventArgs e)
         {
             FrmAbout about = new FrmAbout();
@@ -60,21 +96,21 @@ namespace Chocolatra
 
         private void btnUninstallChocolatey_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are You sure You want to remove Chocolatey from your system? Chocolatra will no longer work until You reinstall Chocolatey!", "Do You really want to Uninstall Chocolatey?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Translation.Engine.Lines["mboxuninstallchocotext"], Translation.Engine.Lines["mboxuninstallchocotitle"], MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\chocolatey", true);
-                    MessageBox.Show("Chocolatey was removed from this computer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Translation.Engine.Lines["mboxchocoremovedtext"], Translation.Engine.Lines["mboxchocoremovedtitle"], MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error while trying to remove Chocolatey", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, Translation.Engine.Lines["mboxuninstallchocoerrortitle"], MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-        
-        
+
+
         private void btnOpenSite_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["FrmBrowser"] == null)
@@ -110,7 +146,7 @@ namespace Chocolatra
             }
             else
             {
-                MessageBox.Show("You have to type the Chocolatey package name on the text field before adding", "No given package name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Translation.Engine.Lines["mboxnopackagenamegiventext"], Translation.Engine.Lines["mboxnopackagenamegiventitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -125,9 +161,14 @@ namespace Chocolatra
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\chocolatey"))
+            {
+                MessageBox.Show(Translation.Engine.Lines["mboxchocolateynotinstalledtext"], Translation.Engine.Lines["mboxchocolateynotinstalledtitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             if (!Utils.Internet.IsActive())
             {
-                QuickLog("Attention: This application needs an active internet connection to work");
+                QuickLog(Translation.Engine.Lines["quicklognoconnection"]);
             }
             RefreshList();
         }
@@ -138,7 +179,7 @@ namespace Chocolatra
             ChangeCheckAll();
         }
 
-       
+
 
         private void StartChocoWithPrgss(string command, string logMessage)
         {
@@ -162,30 +203,30 @@ namespace Chocolatra
 
                 Choco.RunChoco(box, command, chkShowConsole.Checked);
                 ++currentIndex;
-            }); 
+            });
             Invoke(new MethodInvoker(() =>
             {
                 prgProgress.Visible = false;
                 lblProgress.Visible = false;
             }));
 
-            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons});
+            Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons });
         }
 
 
         private async void btnInstallPackages_Click(object sender, EventArgs e)
         {
-            if (isAnyPackageSelected()) 
+            if (isAnyPackageSelected())
             {
-                string forceDependencies = (chkForceDependencies.Checked)? " --force --force-dependencies ":"";
-                Task tsk = new Task(() => { StartChocoWithPrgss("install"+forceDependencies, "Installing package"); });
+                string forceDependencies = (chkForceDependencies.Checked) ? " --force --force-dependencies " : "";
+                Task tsk = new Task(() => { StartChocoWithPrgss("install" + forceDependencies, "Installing package"); });
                 tsk.Start();
                 await tsk;
 
             }
             else
             {
-                MessageBox.Show("You have to select a package to install", "No packages selected for installation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                noPackagesSelectedMsg();
             }
         }
 
@@ -199,7 +240,7 @@ namespace Chocolatra
             }
             else
             {
-                MessageBox.Show("You have to select a package to upgrade", "No packages selected for upgrading", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                noPackagesSelectedMsg();
             }
         }
 
@@ -208,16 +249,21 @@ namespace Chocolatra
             if (isAnyPackageSelected())
             {
                 string removeDependencies = (chkForceDependencies.Checked) ? " --remove-dependencies " : "";
-                Task tsk = new Task(() => { StartChocoWithPrgss("uninstall"+removeDependencies, "Uninstalling package"); });
+                Task tsk = new Task(() => { StartChocoWithPrgss("uninstall" + removeDependencies, "Uninstalling package"); });
                 tsk.Start();
                 await tsk;
             }
             else
             {
-                MessageBox.Show("You have to select a package to uninstall", "No packages selected for uninstallation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                noPackagesSelectedMsg();
             }
         }
-        
+
+        private void noPackagesSelectedMsg()
+        {
+            MessageBox.Show(Translation.Engine.Lines["mboxnopackagesselectedtext"], Translation.Engine.Lines["mboxnopackagesselectedtitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         private void txtAddCommand_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -225,7 +271,7 @@ namespace Chocolatra
                 btnAdd.PerformClick();
             }
         }
-        
+
         /// <summary>
         /// Changes the checked state of all checkboxes inside panelListBoxContainer
         /// </summary>
@@ -277,7 +323,7 @@ namespace Chocolatra
             }
             else
             {
-                MessageBox.Show("You have to select something to remove", "No packages selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                noPackagesSelectedMsg();
             }
 
         }

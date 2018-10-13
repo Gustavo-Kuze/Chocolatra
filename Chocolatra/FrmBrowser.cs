@@ -17,6 +17,18 @@ namespace Chocolatra
         public FrmBrowser()
         {
             InitializeComponent();
+            TranslateForm();
+        }
+
+        private void TranslateForm()
+        {
+            var lines = Translation.Engine.Lines;
+            Text = lines["frmbrowsertitle"];
+            lblAddedPackagesList.Text = lines["lbladdedpackageslist"];
+            btnToggleDrawer.Text = lines["btntogglepackageslist"];
+            btnBrowserOk.Text = lines["btnok"];
+            btnBrowserCancel.Text = lines["btncancel"];
+
         }
 
 
@@ -43,7 +55,7 @@ namespace Chocolatra
                     foreach (HtmlElement code in codes)
                     {
                         var btn = webBrowser.Document.CreateElement("button");
-                        btn.InnerText = "Add to Chocolatra";
+                        btn.InnerText = Translation.Engine.Lines["btnschocolateysite"];
                         btn.Style = "background-color:#795548;color:white;border:1px solid #f5f5f5;font-family: Segoe UI, Sans;text-shadow: 3px 3px 8px #222;font-size: 1.1em;margin-top:10px;cursor: pointer;padding: 8px;";
                         code.AppendChild(btn);
 

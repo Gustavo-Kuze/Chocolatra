@@ -38,9 +38,22 @@ Or if You would prefer to install It manually, simply run cmd as administrator a
 Everytime Chocolatra is open, It will create a "packages" file if not found. This file is a pretty lazy Database for your saved packages.
 So, if You want to move Chocolatra to another directory and You want to keep the packages saved, You need to move the packages file along with the main executable and the MaterialSkin.dll!
 
+<h2>Translation</h2>
+Version 1.6 brings You the new Language Translator engine! Let's see how to set the program to show pt-br (Brazilian Portuguese) strings.
 
-<h4>The future</h4>
-I have plans to add a translation engine to the program, so people can add their own and help me out with that, but please note that I'm the only developer of this tool so far and I don't have much time, so It will take a while until this project is mature enough to become as BIG as I want!
+1. Download the language file from <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">here</a>;
+
+2. Put the file inside the same folder as Chocolatra.exe is contained;
+
+3. Done!
+
+NOTE: Since version 1.6, the program will automatically generate an English lang_dict.json file inside Its execution directory. You can use that file to translate to your own language and send It to me, if You want others to enjoy globalized texts as well.
+
+
+## Credits
+
+* The credits for the forms styling goes to the <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a> project;
+* The credits for the json parsing used on the translator engine goes to the <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a> project;
 
 ____
 
@@ -80,7 +93,18 @@ Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e col
 Toda vez que o Chocolatra é aberto, ele cria um arquivo "packages" caso o mesmo não exista. Este arquivo é um banco de dados simples para guardar os pacotes Chocolatey adicionados à fila de automação.
 Então, caso você queira mover o Chocolatra para outro diretório e manter os arquivos salvos, você deve mover o arquivo packages junto com o executável principal e o arquivo MaterialSkin.dll!
 
+<h2>Tradução</h2>
+A versão 1.6 traz para você o novo motor de tradução! Vamos ver como configurar o programa para mostrar as strings em pt-br (Português Brasileiro).
 
-<h4>O futuro</h4>
-Tenho planos para adicionar um motor de tradução ao programa, para que o pessoal possa criar suas próprias e me ajudar com isso, mas por favor note que sou o único desenvolvedor dessa ferramenta até o momento e não tenho muito tempo, então vai levar um tempo até que o projeto se torne maduro o suficiente.
+1. Baixe o arquivo de idioma <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">daqui</a>;
 
+2. Coloque o arquivo dentro da mesma pasta que o Chocolatra.exe está contido;
+
+3. Feito!
+
+NOTA: Desde a versão 1.6, o programa irá gerar automaticamente um arquivo lang_dict.json em seu diretório de execução. Você pode usar esse arquivo para traduzir para o seu próprio idioma e enviá-lo para mim, se quiser que outros também aproveitem os textos globalizados.
+
+## Créditos
+
+* Os créditos pela estilização dos formulários vão para o projeto <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a>;
+* Os créditos pela conversão Json usada no motor de tradução vão para o projeto <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a>;

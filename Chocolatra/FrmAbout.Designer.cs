@@ -30,8 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblBy = new MaterialSkin.Controls.MaterialLabel();
             this.btnGithub = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,31 +61,31 @@
             this.lblVersion.TabIndex = 1;
             this.lblVersion.Text = "Version";
             // 
-            // textBox1
+            // txtDescription
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(149, 282);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(406, 104);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "\r\nChocolatra is an automation tool for installing, upgrading and uninstalling Cho" +
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(149, 282);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(406, 104);
+            this.txtDescription.TabIndex = 3;
+            this.txtDescription.Text = "\r\nChocolatra is an automation tool for installing, upgrading and uninstalling Cho" +
     "colatey packages.";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // materialLabel1
+            // lblBy
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(231, 433);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(249, 19);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Developed by Gustavo Kuze da Silva";
+            this.lblBy.AutoSize = true;
+            this.lblBy.Depth = 0;
+            this.lblBy.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblBy.Location = new System.Drawing.Point(231, 433);
+            this.lblBy.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblBy.Name = "lblBy";
+            this.lblBy.Size = new System.Drawing.Size(249, 19);
+            this.lblBy.TabIndex = 1;
+            this.lblBy.Text = "Developed by Gustavo Kuze da Silva";
             // 
             // btnGithub
             // 
@@ -121,8 +121,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 603);
             this.Controls.Add(this.btnGithub);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblBy);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -142,8 +142,8 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel lblVersion;
-        private System.Windows.Forms.TextBox textBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private MaterialSkin.Controls.MaterialLabel lblBy;
         private MaterialSkin.Controls.MaterialFlatButton btnGithub;
         private System.Windows.Forms.Panel panel1;
     }
