@@ -11,11 +11,16 @@ _________
 
 
 <h1>Installation</h1>
-• Download the latest <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">release</a> before anything else!
 
-• Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
+- Make sure that You have all these dependencies installed on your Windows before running Chocolatra:
+  
+  - <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42642" target="_blank">.NET Framework 4.5.2</a>
 
-• Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
+- Download the latest <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">release</a> before anything else!
+
+- Chocolatra needs Chocolatey installed on Your system for It to work. If that's not your case, don't worry, You can Install the Chocolatey CLI from the program by clicking the "INSTALL CHOCOLATEY" button, which will run the original installation script for downloading and installing automatically.
+
+- Or if You would prefer to install It manually, simply run cmd as administrator and paste the following script on It:
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
@@ -25,11 +30,12 @@ _________
 <h2>Installing upgrading and removing packages automatically</h2>
 
 1. First of all, You need to add your packages to the automation row. There are a few ways You can do It:
-* You can type the package name on the text field, and press enter or click the add button;
 
-* You can look for installed packages by clicking the "add installed packages" button, which will Choco search in your system for Chocolatey programs;
+-You can type the package name on the text field, and press enter or click the add button;
 
-* Or You can get packages directly from the website by clicking in "Online search". When You do so, a new integrated webbrowser window will open up with the a customized version of Chocolatey Website. You can simply click on the "Add to Chocolatra" buttons to add the packages to the list on your left. You can click the list item to remove It too. When You close the browser, all selected packages will be added to the automation row.
+- You can look for installed packages by clicking the "add installed packages" button, which will Choco search in your system for Chocolatey programs;
+
+- Or You can get packages directly from the website by clicking in "Online search". When You do so, a new integrated webbrowser window will open up with the a customized version of Chocolatey Website. You can simply click on the "Add to Chocolatra" buttons to add the packages to the list on your left. You can click the list item to remove It too. When You close the browser, all selected packages will be added to the automation row.
 
 2. Now You have to check all packages that You want to manipulate, and choose an Action, like "Install Packages" for example. The packages Will suffer the Action sequentially, showing You the progress during Its execution.
 
@@ -53,8 +59,9 @@ NOTE: Since version 1.6, the program will automatically generate an English lang
 
 ## Credits
 
-* The credits for the forms styling goes to the <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a> project;
-* The credits for the json parsing used on the translator engine goes to the <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a> project;
+- The credits for the forms styling goes to the <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a> project;
+
+- The credits for the json parsing used on the translator engine goes to the <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a> project;
 
 ____
 
@@ -64,11 +71,17 @@ ____
 
 
 <h1>Instalação</h1>
-• Baixe a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a> antes de mais nada!
 
-• O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
+- Certifique-se de que o seu Windows tem as seguintes dependências instaladas antes de iniciar o Chocolatra:
+  
+  - <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42642" target="_blank">.NET Framework 4.5.2</a>
 
-• Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e cole o seguinte script:
+- Baixe a ultima <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases" target="_blank">versão</a> antes de mais nada!
+
+- O Chocolatra precisa do Chocolatey instalado em seu sistema para funcionar. Se este não for o seu caso, não se preocupe, você pode instalar o CLI do Chocolatey através do programa ao clicar no botão "INSTALL CHOCOLATEY", que rodará o código original de instalação para baixá-lo e instalá-lo automaticamente.
+
+- Ou caso prefira instalá-lo automaticamente, abra o CMD como administrador e cole o seguinte script:
+
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
@@ -105,5 +118,6 @@ NOTA: Desde a versão 1.6, o programa irá gerar automaticamente um arquivo lang
 
 ## Créditos
 
-* Os créditos pela estilização dos formulários vão para o projeto <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a>;
-* Os créditos pela conversão Json usada no motor de tradução vão para o projeto <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a>;
+- Os créditos pela estilização dos formulários vão para o projeto <a href="https://github.com/IgnaceMaes/MaterialSkin">MaterialSkin</a>;
+
+- Os créditos pela conversão Json usada no motor de tradução vão para o projeto <a href="https://github.com/JamesNK/Newtonsoft.Json">Json.NET</a>;
