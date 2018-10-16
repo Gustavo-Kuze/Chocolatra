@@ -8,7 +8,6 @@ namespace Chocolatra.Utils
 {
     internal class Internet
     {
-
         /// <summary>
         /// Checks for an active internet connection
         /// </summary>

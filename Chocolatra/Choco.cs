@@ -17,12 +17,7 @@ namespace Chocolatra
         /// <param name="command">What should the Choco tool do with the given package</param>
         public static void RunChoco(string package, string command, bool showConsole = true)
         {
-            ProcessWindowStyle style = ProcessWindowStyle.Hidden;
-            if (showConsole)
-            {
-                style = ProcessWindowStyle.Normal;
-            }
-
+            ProcessWindowStyle style = (showConsole) ?  ProcessWindowStyle.Normal : ProcessWindowStyle.Hidden;
             Cmd.RunAndWait("choco " + command + " " + package + " -y", true, style);
         }
 

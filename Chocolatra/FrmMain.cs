@@ -17,8 +17,8 @@ namespace Chocolatra
 
         public FrmMain()
         {
-            Gui = new Utils.GUI(this);
             InitializeComponent();
+            Gui = new Utils.GUI(this);
             setMaterialThemeColors();
             Translation.Engine.load();
             TranslateForm();
@@ -59,7 +59,6 @@ namespace Chocolatra
 
         private async void btnAddInstalledPackages_Click(object sender, EventArgs e)
         {
-            //QuickLog("Searching for packages, please wait...");
             QuickLog(Translation.Engine.Lines["pleasewait"]);
             Task task = new Task(addInstalledToList);
             task.Start();
@@ -80,7 +79,6 @@ namespace Chocolatra
                 ProcessWindowStyle style = ProcessWindowStyle.Hidden;
                 Invoke(new MethodInvoker(() =>
                 {
-                    panelChocolateyButtons.Enabled = false;
                     if (chkShowConsole.Checked)
                     {
                         style = ProcessWindowStyle.Normal;

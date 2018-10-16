@@ -16,7 +16,7 @@ namespace Chocolatra.Translation
         public static void create()
         {
             /*
-             create this dictionary is none is found
+             create this dictionary if none is found
              */
             Lines = new Dictionary<string, string>
             {
@@ -91,27 +91,3 @@ namespace Chocolatra.Translation
         }
     }
 }
-/*
-  { "frmmaintitle", "Chocolatra - O automatizador de pacotes Chocolatey" },
-                {"lblautomationrow", "Fila de automação"},
-                { "pleasewait", "Procurando pacotes, por favor aguarde..." },
-                { "chkcheckall", "Selecionar todos" },
-                {"txtaddcommandhint", "Nome do pacote para adicionar"},
-                {"btnadd", "Adicionar"},
-                {"btnremoveselected", "Remover selecionados"},
-                {"btnaddinstalled", "Adicionar pacotes instalados"},
-                {"btnonlinesearch", "Buscar online"},
-                {"lblactions", "Ações"},
-                {"btninstallchoco", "Instalar Chocolatey"},
-                {"btnuninstallchoco", "Desinstalar Chocolatey"},
-                {"btninstall", "Instalar pacotes"},
-                {"btnuninstall", "Desinstalar pacotes"},
-                {"btnupgrade", "Atualizar pacotes"},
-                {"chkforcedependencies", "Forçar dependências"},
-                {"lblmore", "Mais"},
-                {"chkshowconsole", "Mostrar console do Chocolatey"},
-                {"mboxuninstallchocotext", "Tem certeza de que deseja desinstalar Chocolatey do seu sistema? O Chocolatra não funcionará corretamente até que você reinstale-o"},
-                {"mboxuninstallchocotitle", "Você realmente deseja desinstalar?"},
-               
-     
-     */
