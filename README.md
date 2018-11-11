@@ -48,7 +48,7 @@ So, if You want to move Chocolatra to another directory and You want to keep the
 <h2>Translation</h2>
 Version 1.6 brings You the new Language Translator engine! Let's see how to set the program to show pt-br (Brazilian Portuguese) strings.
 
-1. Download the language file from <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">here</a>;
+1. Download the language file from <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">source code</a> or from <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases">Releases tab</a>;
 
 2. Put the file inside the same folder as Chocolatra.exe is contained;
 
@@ -108,7 +108,7 @@ Então, caso você queira mover o Chocolatra para outro diretório e manter os a
 <h2>Tradução</h2>
 A versão 1.6 traz para você o novo motor de tradução! Vamos ver como configurar o programa para mostrar as strings em pt-br (Português Brasileiro).
 
-1. Baixe o arquivo de idioma <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">daqui</a>;
+1. Baixe o arquivo de idioma a partir do <a href="https://github.com/Gustavo-Kuze/Chocolatra/tree/v1.6/Translations">Código fonte</a> ou da <a href="https://github.com/Gustavo-Kuze/Chocolatra/releases">aba Releases</a>;;
 
 2. Coloque o arquivo dentro da mesma pasta que o Chocolatra.exe está contido;
 
