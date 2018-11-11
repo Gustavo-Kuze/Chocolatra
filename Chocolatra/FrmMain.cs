@@ -89,6 +89,7 @@ namespace Chocolatra
             tsk.Start();
             await tsk;
             Gui.TogglePanelsEnabled(new Panel[] { panelChocolateyButtons, panelActionButtons });
+            Program.restart();
         }
 
 
@@ -162,6 +163,8 @@ namespace Chocolatra
             if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\chocolatey"))
             {
                 MessageBox.Show(Translation.Engine.Lines["mboxchocolateynotinstalledtext"], Translation.Engine.Lines["mboxchocolateynotinstalledtitle"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnInstallChoco.Visible = true;
+                btnUninstallChocolatey.Visible = false;
             }
 
             if (!Utils.Internet.IsActive())

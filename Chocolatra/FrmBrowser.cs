@@ -56,14 +56,6 @@ namespace Chocolatra
                     };
                 }
 
-                try
-                {
-                    webBrowser.Document.GetElementById("package-disclaimer").Style = "display: none;";
-                }
-                catch
-                {
-                }
-
             };
         }
 

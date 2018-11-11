@@ -18,5 +18,14 @@ namespace Chocolatra
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
         }
+
+        internal static void restart()
+        {
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
+            psi.FileName = Application.StartupPath + "\\Chocolatra.exe";
+            psi.Verb = "runas";
+            System.Diagnostics.Process.Start(psi);
+            Environment.Exit(0);
+        }
     }
 }
